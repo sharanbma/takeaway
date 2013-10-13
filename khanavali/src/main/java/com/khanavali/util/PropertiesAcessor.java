@@ -9,12 +9,8 @@ import com.khanavali.log.LogFactory;
  * Created on 13 Oct 2013 at 23:23:14 
  * Eclipse IDE
  * 
-<<<<<<< HEAD
- * 
  * Just helps getting properties from config bundles
  * 
-=======
->>>>>>> refs/remotes/origin/master
  */
 
 public class PropertiesAcessor {
