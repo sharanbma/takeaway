@@ -10,7 +10,7 @@
 		<title>Welcome</title>
 	</head> 
 	<body>
-		<c:url value="/showMessage.html" var="messageUrl" />
+		<c:url value="/showMessage.jsp" var="messageUrl" />
 		<a href="${messageUrl}">Click to enter</a>
 	</body>
 </html>
