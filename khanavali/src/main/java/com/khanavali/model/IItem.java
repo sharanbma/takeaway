@@ -1,5 +1,7 @@
 package com.khanavali.model;
 
+import java.util.List;
+
 /**
  * @author melkotek
  * Created on 14 Oct 2013 at 23:48:31
@@ -30,4 +32,6 @@ public interface IItem {
 	public boolean isActive();
 	
 	public Portion getPortionType();
+
+	List<String> getTags();
 }
