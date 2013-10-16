@@ -77,9 +77,9 @@
 
 		<div class="row">
 
-			<div class="col-md-3 portfolio-item">
+			<div class="col-md-2 portfolio-item">
 				<strong>IDLI</strong> <a style="padding: 10px 10px 10px 10px;">
-					<img width="150px" height="150px" class="img-responsive"
+					<img width="165px" height="100px" class="img-responsive"
 					src="/khanavali/resources/images/idli.jpg">
 				</a>
 				<form id='myform' method='POST' action='#'>
@@ -89,67 +89,174 @@
 				</form>
 			</div>
 
-			<div class="col-md-3 portfolio-item">
-				<a href="portfolio-item.html"><img class="img-responsive"
-					src="http://placehold.it/750x450"></a>
+			<div class="col-md-2 portfolio-item">
+				<strong>IDLI</strong> <a style="padding: 10px 10px 10px 10px;">
+					<img width="165px" height="100px" class="img-responsive"
+					src="/khanavali/resources/images/idli.jpg">
+				</a>
+				<form id='myform' method='POST' action='#'>
+					<input type='button' value='-' class='qtyminus' field='quantity' />
+					<input type='text' name='quantity' value='0' class='qty' /> <input
+						type='button' value='+' class='qtyplus' field='quantity' />
+				</form>
 			</div>
 
-			<div class="col-md-3 portfolio-item">
-				<a href="portfolio-item.html"><img class="img-responsive"
-					src="http://placehold.it/750x450"></a>
+			<div class="col-md-2 portfolio-item">
+				<strong>IDLI</strong> <a style="padding: 10px 10px 10px 10px;">
+					<img width="165px" height="100px" class="img-responsive"
+					src="/khanavali/resources/images/idli.jpg">
+				</a>
+				<form id='myform' method='POST' action='#'>
+					<input type='button' value='-' class='qtyminus' field='quantity' />
+					<input type='text' name='quantity' value='0' class='qty' /> <input
+						type='button' value='+' class='qtyplus' field='quantity' />
+				</form>
 			</div>
 
-			<div class="col-md-3 portfolio-item">
-				<a href="portfolio-item.html"><img class="img-responsive"
-					src="http://placehold.it/750x450"></a>
+			<div class="col-md-2 portfolio-item">
+				<strong>IDLI</strong> <a style="padding: 10px 10px 10px 10px;">
+					<img width="165px" height="100px" class="img-responsive"
+					src="/khanavali/resources/images/idli.jpg">
+				</a>
+				<form id='myform' method='POST' action='#'>
+					<input type='button' value='-' class='qtyminus' field='quantity' />
+					<input type='text' name='quantity' value='0' class='qty' /> <input
+						type='button' value='+' class='qtyplus' field='quantity' />
+				</form>
+			</div>
+			<div class="col-md-2 portfolio-item">
+				<strong>IDLI</strong> <a style="padding: 10px 10px 10px 10px;">
+					<img width="165px" height="100px" class="img-responsive"
+					src="/khanavali/resources/images/idli.jpg">
+				</a>
+				<form id='myform' method='POST' action='#'>
+					<input type='button' value='-' class='qtyminus' field='quantity' />
+					<input type='text' name='quantity' value='0' class='qty' /> <input
+						type='button' value='+' class='qtyplus' field='quantity' />
+				</form>
+			</div>
+		</div>
+
+		<div class="row">
+
+			<div class="col-md-2 portfolio-item">
+				<strong>IDLI</strong> <a style="padding: 10px 10px 10px 10px;">
+					<img width="165px" height="100px" class="img-responsive"
+					src="/khanavali/resources/images/idli.jpg">
+				</a>
+				<form id='myform' method='POST' action='#'>
+					<input type='button' value='-' class='qtyminus' field='quantity' />
+					<input type='text' name='quantity' value='0' class='qty' /> <input
+						type='button' value='+' class='qtyplus' field='quantity' />
+				</form>
+			</div>
+			<div class="col-md-2 portfolio-item">
+				<strong>IDLI</strong> <a style="padding: 10px 10px 10px 10px;">
+					<img width="165px" height="100px" class="img-responsive"
+					src="/khanavali/resources/images/idli.jpg">
+				</a>
+				<form id='myform' method='POST' action='#'>
+					<input type='button' value='-' class='qtyminus' field='quantity' />
+					<input type='text' name='quantity' value='0' class='qty' /> <input
+						type='button' value='+' class='qtyplus' field='quantity' />
+				</form>
+			</div>
+			<div class="col-md-2 portfolio-item">
+				<strong>IDLI</strong> <a style="padding: 10px 10px 10px 10px;">
+					<img width="165px" height="100px" class="img-responsive"
+					src="/khanavali/resources/images/idli.jpg">
+				</a>
+				<form id='myform' method='POST' action='#'>
+					<input type='button' value='-' class='qtyminus' field='quantity' />
+					<input type='text' name='quantity' value='0' class='qty' /> <input
+						type='button' value='+' class='qtyplus' field='quantity' />
+				</form>
+			</div>
+
+			<div class="col-md-2 portfolio-item">
+				<strong>IDLI</strong> <a style="padding: 10px 10px 10px 10px;">
+					<img width="165px" height="100px" class="img-responsive"
+					src="/khanavali/resources/images/idli.jpg">
+				</a>
+				<form id='myform' method='POST' action='#'>
+					<input type='button' value='-' class='qtyminus' field='quantity' />
+					<input type='text' name='quantity' value='0' class='qty' /> <input
+						type='button' value='+' class='qtyplus' field='quantity' />
+				</form>
+			</div>
+
+			<div class="col-md-2 portfolio-item">
+				<strong>IDLI</strong> <a style="padding: 10px 10px 10px 10px;">
+					<img width="165px" height="100px" class="img-responsive"
+					src="/khanavali/resources/images/idli.jpg">
+				</a>
+				<form id='myform' method='POST' action='#'>
+					<input type='button' value='-' class='qtyminus' field='quantity' />
+					<input type='text' name='quantity' value='0' class='qty' /> <input
+						type='button' value='+' class='qtyplus' field='quantity' />
+				</form>
 			</div>
 
 		</div>
 
 		<div class="row">
 
-			<div class="col-md-3 portfolio-item">
-				<a href="portfolio-item.html"><img class="img-responsive"
-					src="http://placehold.it/750x450"></a>
+			<div class="col-md-2 portfolio-item">
+				<strong>IDLI</strong> <a style="padding: 10px 10px 10px 10px;">
+					<img width="165px" height="100px" class="img-responsive"
+					src="/khanavali/resources/images/idli.jpg">
+				</a>
+				<form id='myform' method='POST' action='#'>
+					<input type='button' value='-' class='qtyminus' field='quantity' />
+					<input type='text' name='quantity' value='0' class='qty' /> <input
+						type='button' value='+' class='qtyplus' field='quantity' />
+				</form>
 			</div>
 
-			<div class="col-md-3 portfolio-item">
-				<a href="portfolio-item.html"><img class="img-responsive"
-					src="http://placehold.it/750x450"></a>
+			<div class="col-md-2 portfolio-item">
+				<strong>IDLI</strong> <a style="padding: 10px 10px 10px 10px;">
+					<img width="165px" height="100px" class="img-responsive"
+					src="/khanavali/resources/images/idli.jpg">
+				</a>
+				<form id='myform' method='POST' action='#'>
+					<input type='button' value='-' class='qtyminus' field='quantity' />
+					<input type='text' name='quantity' value='0' class='qty' /> <input
+						type='button' value='+' class='qtyplus' field='quantity' />
+				</form>
+			</div>
+			<div class="col-md-2 portfolio-item">
+				<strong>IDLI</strong> <a style="padding: 10px 10px 10px 10px;">
+					<img width="165px" height="100px" class="img-responsive"
+					src="/khanavali/resources/images/idli.jpg">
+				</a>
+				<form id='myform' method='POST' action='#'>
+					<input type='button' value='-' class='qtyminus' field='quantity' />
+					<input type='text' name='quantity' value='0' class='qty' /> <input
+						type='button' value='+' class='qtyplus' field='quantity' />
+				</form>
+			</div>
+			<div class="col-md-2 portfolio-item">
+				<strong>IDLI</strong> <a style="padding: 10px 10px 10px 10px;">
+					<img width="165px" height="100px" class="img-responsive"
+					src="/khanavali/resources/images/idli.jpg">
+				</a>
+				<form id='myform' method='POST' action='#'>
+					<input type='button' value='-' class='qtyminus' field='quantity' />
+					<input type='text' name='quantity' value='0' class='qty' /> <input
+						type='button' value='+' class='qtyplus' field='quantity' />
+				</form>
 			</div>
 
-			<div class="col-md-3 portfolio-item">
-				<a href="portfolio-item.html"><img class="img-responsive"
-					src="http://placehold.it/750x450"></a>
-			</div>
-
-			<div class="col-md-3 portfolio-item">
-				<a href="portfolio-item.html"><img class="img-responsive"
-					src="http://placehold.it/750x450"></a>
-			</div>
-
-		</div>
-
-		<div class="row">
-
-			<div class="col-md-3 portfolio-item">
-				<a href="portfolio-item.html"><img class="img-responsive"
-					src="http://placehold.it/750x450"></a>
-			</div>
-
-			<div class="col-md-3 portfolio-item">
-				<a href="portfolio-item.html"><img class="img-responsive"
-					src="http://placehold.it/750x450"></a>
-			</div>
-
-			<div class="col-md-3 portfolio-item">
-				<a href="portfolio-item.html"><img class="img-responsive"
-					src="http://placehold.it/750x450"></a>
-			</div>
-
-			<div class="col-md-3 portfolio-item">
-				<a href="portfolio-item.html"><img class="img-responsive"
-					src="http://placehold.it/750x450"></a>
+			<div class="col-md-2 portfolio-item">
+				<strong>IDLI</strong> <a style="padding: 10px 10px 10px 10px;">
+					<img width="165px" height="100px" class="img-responsive"
+					src="/khanavali/resources/images/idli.jpg">
+				</a>
+				<form id='myform' method='POST' action='#'>
+					<input type='button' value='-' class='qtyminus' field='quantity' />
+					<input type='text' name='quantity' value='0' class='qty' /> <input
+						type='button' value='+' class='qtyplus' field='quantity' />
+				</form>
 			</div>
 
 		</div>

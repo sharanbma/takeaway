@@ -8,6 +8,6 @@
 	<!-- Maps '/' requests to the 'home' view -->
 	<!--<mvc:view-controller path="/" view-name="home" />-->
 	<mvc:annotation-driven />
-	<context:component-scan base-package="com.khanavali" />
+	<context:component-scan base-package="com.khanavali.controllers" />
 
 </beans>
