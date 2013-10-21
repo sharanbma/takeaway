@@ -102,7 +102,10 @@ public class ParentOrder implements IOrderList {
 
 	@Override
 	public void updateItemOrder(IItem item, double quantity) {
-		this.addItemOrder(item,0.0d - quantity);
+		IOrder order = getOrder(item);
+		if(order != null){
+			order.setQuantity(quantity);
+		}
 	}
 
 }

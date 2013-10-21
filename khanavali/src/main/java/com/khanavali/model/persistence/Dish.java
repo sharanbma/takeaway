@@ -25,6 +25,34 @@ import com.khanavali.model.Portion;
 public class Dish implements IItem,Serializable {
 	private static final long serialVersionUID = 1L;
 
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Dish [dishId=");
+		builder.append(dishId);
+		builder.append(", imageUrl=");
+		builder.append(imageUrl);
+		builder.append(", longDescription=");
+		builder.append(longDescription);
+		builder.append(", minPortions=");
+		builder.append(minPortions);
+		builder.append(", name=");
+		builder.append(name);
+		builder.append(", portionIncrement=");
+		builder.append(portionIncrement);
+		builder.append(", portionSize=");
+		builder.append(portionSize);
+		builder.append(", price=");
+		builder.append(price);
+		builder.append(", shortDescription=");
+		builder.append(shortDescription);
+		builder.append(", active=");
+		builder.append(active);
+		builder.append("]");
+		return builder.toString();
+	}
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long dishId;
@@ -49,6 +77,15 @@ public class Dish implements IItem,Serializable {
 
 	public Dish(String name, String shortDescription, String longDescription, String imageUrl, double portionSize, double price, double portionIncrement, int minPortions, boolean active){
 		
+		this.name = name;
+		this.shortDescription = shortDescription;
+		this.longDescription = longDescription;
+		this.imageUrl = imageUrl;
+		this.portionSize = portionSize;
+		this.price = price;
+		this.portionIncrement = portionIncrement;
+		this.minPortions = minPortions;
+		this.active = active;
 	}
 	
 	

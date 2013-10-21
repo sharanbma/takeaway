@@ -12,11 +12,13 @@ import org.springframework.data.repository.CrudRepository;
  */
 
 public interface DishRepository extends CrudRepository<Dish, Long>{
-	
+
+	/**
 	List<Dish> findById(long id);
+	**/
 	
 	List<Dish> findByName(String name);
 	
 	List<Dish> findByShortDescription(String shortDescription);
-
+	
 }
