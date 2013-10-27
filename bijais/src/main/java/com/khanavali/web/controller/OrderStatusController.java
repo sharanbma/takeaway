@@ -29,15 +29,21 @@ public class OrderStatusController {
 	private OrderService orderService;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String orderStatus(@ModelAttribute("orderStatus") OrderStatus orderStatus) {
-		LOG.debug("Get order status for order id {} customer {}", orderStatus.getOrderId(), orderStatus.getName());
+	public String orderStatus(
+			@ModelAttribute("orderStatus") OrderStatus orderStatus) {
+		LOG.debug("Get order status for order id {} customer {}",
+				orderStatus.getOrderId(), orderStatus.getName());
 		return "/order";
 	}
 
 	@ModelAttribute("orderStatus")
 	private OrderStatus getOrderStatus(@PathVariable("orderId") String orderId) {
-		OrderDetailsEvent orderDetailsEvent = orderService.requestOrderDetails(new RequestOrderDetailsEvent(UUID.fromString(orderId)));
-		OrderStatusEvent orderStatusEvent = orderService.requestOrderStatus(new RequestOrderStatusEvent(UUID.fromString(orderId)));
+		OrderDetailsEvent orderDetailsEvent = orderService
+				.requestOrderDetails(new RequestOrderDetailsEvent(UUID
+						.fromString(orderId)));
+		OrderStatusEvent orderStatusEvent = orderService
+				.requestOrderStatus(new RequestOrderStatusEvent(UUID
+						.fromString(orderId)));
 		OrderStatus status = new OrderStatus();
 		status.setName(orderDetailsEvent.getOrderDetails().getName());
 		status.setOrderId(orderId);

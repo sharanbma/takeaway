@@ -14,12 +14,13 @@ import com.khanavali.web.domain.Basket;
 @Controller
 public class BasketQueryController {
 
-	private static final Logger LOG = LoggerFactory.getLogger(BasketQueryController.class);
-			
+	private static final Logger LOG = LoggerFactory
+			.getLogger(BasketQueryController.class);
+
 	@Autowired
 	private Basket basket;
-		
-	@RequestMapping(value = "/showBasket" , method = RequestMethod.GET)
+
+	@RequestMapping(value = "/showBasket", method = RequestMethod.GET)
 	public String show(Model model) {
 		LOG.debug("Show the basket contents");
 		return "/showBasket";

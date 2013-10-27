@@ -46,7 +46,7 @@ body {
 			<p>
 				<a class="btn btn-primary btn-large" href="http://spring.io/">Learn
 					more about Spring</a> <a th:if="${basket.size &gt; 0}"
-					class="btn btn-primary btn-large" th:href="@{/showBasket}">Look
+					class="btn btn-primary btn-large" th:href="@{/bijais-web/showBasket}">Look
 					in your basket</a>
 			</p>
 
@@ -78,7 +78,7 @@ body {
 							<td th:text="${item.cost}"></td>
 							<td th:text="${item.minutesToPrepare}"></td>
 							<td>
-								<form action="/addToBasket" method="POST">
+								<form action="/bijais-web/addToBasket" method="POST">
 									<input id="id" name="id" type="hidden" th:value="${item.id}" />
 									<input id="name" name="name" type="hidden"
 										th:value="${item.name}" /> <input id="cost" name="cost"

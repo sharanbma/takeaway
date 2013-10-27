@@ -40,7 +40,9 @@ public class CheckoutController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String doCheckout(@Valid @ModelAttribute("customerInfo") CustomerInfo customer, BindingResult result, RedirectAttributes redirectAttrs) {
+	public String doCheckout(
+			@Valid @ModelAttribute("customerInfo") CustomerInfo customer,
+			BindingResult result, RedirectAttributes redirectAttrs) {
 		if (result.hasErrors()) {
 			// errors in the form
 			// show the checkout form again
