@@ -31,6 +31,10 @@ public class Order {
     this.id = id;
   }
   
+  public Order() {
+	// TODO Auto-generated constructor stub
+  }
+  
   public Order(final Date dateTimeOfSubmission) {
 	    this.id = UUID.randomUUID().toString();
 	    this.dateTimeOfSubmission = dateTimeOfSubmission;

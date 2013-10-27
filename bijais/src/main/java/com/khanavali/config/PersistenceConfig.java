@@ -1,35 +1,47 @@
 package com.khanavali.config;
 
+import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+
 import com.khanavali.persistence.domain.MenuItem;
-import com.khanavali.persistence.domain.Order;
-import com.khanavali.persistence.repository.*;
+import com.khanavali.persistence.repository.MenuItemMemoryRepository;
+import com.khanavali.persistence.repository.MenuItemRepository;
+import com.khanavali.persistence.repository.OrderStatusMemoryRepository;
+import com.khanavali.persistence.repository.OrderStatusRepository;
+import com.khanavali.persistence.repository.OrdersRepository;
 import com.khanavali.persistence.services.MenuPersistenceEventHandler;
 import com.khanavali.persistence.services.MenuPersistenceService;
 import com.khanavali.persistence.services.OrderPersistenceEventHandler;
 import com.khanavali.persistence.services.OrderPersistenceService;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
-import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
 
 @Configuration
 public class PersistenceConfig {
 
+/*	
   @Bean
   public OrdersRepository orderRepository() {
     return new OrdersMemoryRepository(new HashMap<String, Order>());
   }
+ */
+	
+	 @Autowired
+	  OrdersRepository ordersRepository;
+	
   @Bean
   public OrderStatusRepository orderStatusRepository() {
     return new OrderStatusMemoryRepository();
   }
+  
   @Bean
   public OrderPersistenceService ordersPersistenceService() {
-    return new OrderPersistenceEventHandler(orderRepository(), orderStatusRepository());
+    return new OrderPersistenceEventHandler(ordersRepository, orderStatusRepository());
   }
 
 	@Bean

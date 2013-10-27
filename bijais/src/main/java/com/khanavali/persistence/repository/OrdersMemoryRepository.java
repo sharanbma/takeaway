@@ -12,6 +12,7 @@ public class OrdersMemoryRepository implements OrdersRepository {
     this.orders = Collections.unmodifiableMap(orders);
   }
 
+  @SuppressWarnings("unchecked")
   @Override
   public synchronized Order save(Order order) {
 
@@ -19,7 +20,7 @@ public class OrdersMemoryRepository implements OrdersRepository {
     modifiableOrders.put(order.getId(), order);
     this.orders = Collections.unmodifiableMap(modifiableOrders);
 
-    return order;
+    return (Order)order;
   }
 
   @Override
@@ -40,4 +41,54 @@ public class OrdersMemoryRepository implements OrdersRepository {
   public List<Order> findAll() {
     return Collections.unmodifiableList(new ArrayList<Order>(orders.values()));
   }
+
+
+
+@Override
+public <S extends Order> Iterable<S> save(Iterable<S> entities) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public Order findOne(String id) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public boolean exists(String id) {
+	// TODO Auto-generated method stub
+	return false;
+}
+
+@Override
+public Iterable<Order> findAll(Iterable<String> ids) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public long count() {
+	// TODO Auto-generated method stub
+	return 0;
+}
+
+@Override
+public void delete(Order entity) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void delete(Iterable<? extends Order> entities) {
+	// TODO Auto-generated method stub
+	
+}
+
+@Override
+public void deleteAll() {
+	// TODO Auto-generated method stub
+	
+}
 }

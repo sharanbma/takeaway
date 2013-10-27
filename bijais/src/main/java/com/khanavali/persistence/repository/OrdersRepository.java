@@ -1,9 +1,11 @@
 package com.khanavali.persistence.repository;
 
+import org.springframework.data.repository.CrudRepository;
+
 import com.khanavali.persistence.domain.Order;
 
 
-public interface OrdersRepository {
+public interface OrdersRepository extends CrudRepository<Order, String> {
 
   Order save(Order order);
 
