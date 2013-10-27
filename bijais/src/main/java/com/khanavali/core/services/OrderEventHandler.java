@@ -27,7 +27,8 @@ public class OrderEventHandler implements OrderService {
     //TODO, where should this go?
     OrderStatusEvent orderStatusEvent = ordersPersistenceService.setOrderStatus(
             new SetOrderStatusEvent(event.getNewOrderKey(), new OrderStatusDetails(event.getNewOrderKey(),
-            UUID.randomUUID(), new Date(), "Order Created")));
+            UUID.randomUUID().toString()
+            , new Date(), "Order Created")));
 
     return event;
   }

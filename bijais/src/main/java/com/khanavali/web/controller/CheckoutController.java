@@ -58,7 +58,7 @@ public class CheckoutController {
 		OrderCreatedEvent event = orderService
 				.createOrder(new CreateOrderEvent(order));
 
-		UUID key = event.getNewOrderKey();
+		String key = event.getNewOrderKey();
 
 		redirectAttrs.addFlashAttribute("message",
 				"Your order has been accepted!");

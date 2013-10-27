@@ -1,4 +1,4 @@
-package com.khanavali;
+package com.khanavali.config;
 
 import javax.servlet.Filter;
 

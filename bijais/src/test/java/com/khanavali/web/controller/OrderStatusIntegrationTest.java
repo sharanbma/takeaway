@@ -34,7 +34,7 @@ public class OrderStatusIntegrationTest {
 
 	private static final String ORDER_VIEW = "/WEB-INF/views/order.html";
 	
-	private static UUID uuid;
+	private static String uuid;
 
 	MockMvc mockMvc;
 
@@ -50,7 +50,7 @@ public class OrderStatusIntegrationTest {
 
 		mockMvc = standaloneSetup(controller).setViewResolvers(viewResolver())
 				.build();
-		uuid = UUID.randomUUID();
+		uuid = UUID.randomUUID().toString();
 	}
 
 	private InternalResourceViewResolver viewResolver() {

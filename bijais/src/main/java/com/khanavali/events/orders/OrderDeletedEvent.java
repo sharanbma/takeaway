@@ -2,25 +2,24 @@ package com.khanavali.events.orders;
 
 import com.khanavali.events.DeletedEvent;
 
-import java.util.UUID;
 
 public class OrderDeletedEvent extends DeletedEvent {
 
-  private UUID key;
+  private String key;
   private OrderDetails details;
   private boolean deletionCompleted;
 
-  private OrderDeletedEvent(UUID key) {
+  private OrderDeletedEvent(String key) {
     this.key = key;
   }
 
-  public OrderDeletedEvent(UUID key, OrderDetails details) {
+  public OrderDeletedEvent(String key, OrderDetails details) {
     this.key = key;
     this.details = details;
     this.deletionCompleted = true;
   }
 
-  public UUID getKey() {
+  public String getKey() {
     return key;
   }
 
@@ -32,14 +31,14 @@ public class OrderDeletedEvent extends DeletedEvent {
     return deletionCompleted;
   }
 
-  public static OrderDeletedEvent deletionForbidden(UUID key, OrderDetails details) {
+  public static OrderDeletedEvent deletionForbidden(String key, OrderDetails details) {
     OrderDeletedEvent ev = new OrderDeletedEvent(key, details);
     ev.entityFound=true;
     ev.deletionCompleted=false;
     return ev;
   }
 
-  public static OrderDeletedEvent notFound(UUID key) {
+  public static OrderDeletedEvent notFound(String key) {
     OrderDeletedEvent ev = new OrderDeletedEvent(key);
     ev.entityFound=false;
     return ev;

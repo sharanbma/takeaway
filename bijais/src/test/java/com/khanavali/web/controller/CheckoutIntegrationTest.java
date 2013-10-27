@@ -90,7 +90,7 @@ public class CheckoutIntegrationTest {
 
 	@Test
 	public void thatRedirectsToOrderOnSuccess() throws Exception {
-		UUID id = UUID.randomUUID();
+		String id = UUID.randomUUID().toString();
 
 		when(orderService.createOrder(any(CreateOrderEvent.class))).thenReturn(newOrder(id));
 
@@ -104,7 +104,7 @@ public class CheckoutIntegrationTest {
 
 	@Test
 	public void thatSendsCorrectOrderEventOnSuccess() throws Exception {
-		UUID id = UUID.randomUUID();
+		String id = UUID.randomUUID().toString();
 
 		when(orderService.createOrder(any(CreateOrderEvent.class))).thenReturn(newOrder(id));
 		
@@ -133,7 +133,7 @@ public class CheckoutIntegrationTest {
 	
 	@Test
 	public void thatBasketIsEmptyOnSuccess() throws Exception {
-		UUID id = UUID.randomUUID();
+		String id = UUID.randomUUID().toString();
 
 		when(orderService.createOrder(any(CreateOrderEvent.class))).thenReturn(newOrder(id));
 
@@ -148,7 +148,7 @@ public class CheckoutIntegrationTest {
 
 	@Test
 	public void thatReturnsToCheckoutIfValidationFail() throws Exception {
-		UUID id = UUID.randomUUID();
+		String id = UUID.randomUUID().toString();
 
 		when(orderService.createOrder(any(CreateOrderEvent.class))).thenReturn(
 				newOrder(id));

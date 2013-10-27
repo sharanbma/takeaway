@@ -2,14 +2,12 @@ package com.khanavali.events.orders;
 
 import com.khanavali.events.CreatedEvent;
 
-import java.util.UUID;
-
 public class OrderCreatedEvent extends CreatedEvent {
 
-  private final UUID newOrderKey;
+  private final String newOrderKey;
   private final OrderDetails details;
 
-  public OrderCreatedEvent(final UUID newOrderKey, final OrderDetails details) {
+  public OrderCreatedEvent(final String newOrderKey, final OrderDetails details) {
     this.newOrderKey = newOrderKey;
     this.details = details;
   }
@@ -18,7 +16,7 @@ public class OrderCreatedEvent extends CreatedEvent {
     return details;
   }
 
-  public UUID getNewOrderKey() {
+  public String getNewOrderKey() {
     return newOrderKey;
   }
 }

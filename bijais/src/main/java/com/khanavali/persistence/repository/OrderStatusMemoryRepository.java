@@ -6,7 +6,7 @@ import java.util.*;
 
 public class OrderStatusMemoryRepository implements OrderStatusRepository {
 
-  private Map<UUID, OrderStatus> orderStatuses = new HashMap<UUID, OrderStatus>();
+  private Map<String, OrderStatus> orderStatuses = new HashMap<String, OrderStatus>();
 
   @Override
   public OrderStatus save(OrderStatus order) {
@@ -15,12 +15,12 @@ public class OrderStatusMemoryRepository implements OrderStatusRepository {
   }
 
   @Override
-  public void delete(UUID key) {
+  public void delete(String key) {
     orderStatuses.remove(key);
   }
 
   @Override
-  public OrderStatus findLatestById(UUID key) {
+  public OrderStatus findLatestById(String key) {
     for(OrderStatus item: orderStatuses.values()) {
       if (item.getOrderId().equals(key)) {
         return item;

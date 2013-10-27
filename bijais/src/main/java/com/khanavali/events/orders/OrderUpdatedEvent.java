@@ -2,23 +2,21 @@ package com.khanavali.events.orders;
 
 import com.khanavali.events.UpdatedEvent;
 
-import java.util.UUID;
-
 public class OrderUpdatedEvent extends UpdatedEvent {
 
-  private UUID key;
+  private String key;
   private OrderDetails orderDetails;
 
-  public OrderUpdatedEvent(UUID key, OrderDetails orderDetails) {
+  public OrderUpdatedEvent(String key, OrderDetails orderDetails) {
     this.key = key;
     this.orderDetails = orderDetails;
   }
 
-  public OrderUpdatedEvent(UUID key) {
+  public OrderUpdatedEvent(String key) {
     this.key = key;
   }
 
-  public UUID getKey() {
+  public String getKey() {
     return key;
   }
 
@@ -26,7 +24,7 @@ public class OrderUpdatedEvent extends UpdatedEvent {
     return orderDetails;
   }
 
-  public static OrderUpdatedEvent notFound(UUID key) {
+  public static OrderUpdatedEvent notFound(String key) {
     OrderUpdatedEvent ev = new OrderUpdatedEvent(key);
     ev.entityFound=false;
     return ev;

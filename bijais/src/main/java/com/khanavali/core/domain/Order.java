@@ -14,7 +14,7 @@ public class Order {
 
   private final Date dateTimeOfSubmission;
   private List<MenuItem> menuItems;
-  private final UUID key;
+  private final String key;
   private Customer customer;
 
   private OrderStatus status;
@@ -27,12 +27,12 @@ public class Order {
   private final static long ACCEPT_CANCEL_TIME = 1000 * 60 * 5;
 
   public Order(final Date dateTimeOfSubmission) {
-    this.key = UUID.randomUUID();
+    this.key = UUID.randomUUID().toString();
     this.dateTimeOfSubmission = dateTimeOfSubmission;
     statusHistory = new ArrayList<OrderStatus>();
   }
 
-  public Order(final UUID key,final Date dateTimeOfSubmission) {
+  public Order(final String key,final Date dateTimeOfSubmission) {
     this.key = key;
     this.dateTimeOfSubmission = dateTimeOfSubmission;
     statusHistory = new ArrayList<OrderStatus>();
@@ -67,7 +67,7 @@ public class Order {
     return dateTimeOfSubmission;
   }
 
-  public UUID getKey() {
+  public String getKey() {
     return key;
   }
 

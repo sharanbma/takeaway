@@ -7,7 +7,7 @@ import java.util.UUID;
 
 public class OrderDetails {
 
-  private UUID key;
+  private String key;
   private Date dateTimeOfSubmission;
   private Map<String, Integer> orderItems;
   
@@ -22,7 +22,7 @@ public class OrderDetails {
     key = null;
   }
 
-  public OrderDetails(UUID key) {
+  public OrderDetails(String key) {
     this.key = key;
   }
 
@@ -46,11 +46,11 @@ public class OrderDetails {
     }
   }
 
-  public UUID getKey() {
+  public String getKey() {
     return key;
   }
 
-  public void setKey(UUID key) {
+  public void setKey(String key) {
     this.key = key;
   }
 

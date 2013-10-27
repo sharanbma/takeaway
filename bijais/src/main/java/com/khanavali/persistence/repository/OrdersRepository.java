@@ -2,15 +2,14 @@ package com.khanavali.persistence.repository;
 
 import com.khanavali.persistence.domain.Order;
 
-import java.util.UUID;
 
 public interface OrdersRepository {
 
   Order save(Order order);
 
-  void delete(UUID key);
+  void delete(String key);
 
-  Order findById(UUID key);
+  Order findById(String key);
 
   Iterable<Order> findAll();
 }

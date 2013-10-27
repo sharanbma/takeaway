@@ -3,15 +3,15 @@ package com.khanavali.persistence.repository;
 import com.khanavali.persistence.domain.OrderStatus;
 
 import java.util.List;
-import java.util.UUID;
+
 
 public interface OrderStatusRepository {
 
   OrderStatus save(OrderStatus orderStatus);
 
-  void delete(UUID key);
+  void delete(String key);
 
-  OrderStatus findLatestById(UUID key);
+  OrderStatus findLatestById(String key);
 
   List<OrderStatus> findAll();
 }

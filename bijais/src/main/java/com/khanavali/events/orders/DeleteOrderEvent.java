@@ -2,17 +2,16 @@ package com.khanavali.events.orders;
 
 import com.khanavali.events.DeleteEvent;
 
-import java.util.UUID;
 
 public class DeleteOrderEvent extends DeleteEvent {
 
-  private final UUID key;
+  private final String key;
 
-  public DeleteOrderEvent(final UUID key) {
+  public DeleteOrderEvent(final String key) {
     this.key = key;
   }
 
-  public UUID getKey() {
+  public String getKey() {
     return key;
   }
 }

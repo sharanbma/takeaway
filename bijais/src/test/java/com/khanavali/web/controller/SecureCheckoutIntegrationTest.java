@@ -1,9 +1,9 @@
 package com.khanavali.web.controller;
 
-import com.khanavali.CoreConfig;
-import com.khanavali.PersistenceConfig;
-import com.khanavali.SecurityConfig;
-import com.khanavali.WebConfig;
+import com.khanavali.config.CoreConfig;
+import com.khanavali.config.PersistenceConfig;
+import com.khanavali.config.SecurityConfig;
+import com.khanavali.config.WebConfig;
 
 import org.junit.Assert;
 import org.junit.Before;

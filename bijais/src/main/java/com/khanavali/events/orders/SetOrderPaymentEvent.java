@@ -2,19 +2,17 @@ package com.khanavali.events.orders;
 
 import com.khanavali.events.UpdateEvent;
 
-import java.util.UUID;
-
 public class SetOrderPaymentEvent extends UpdateEvent {
 
-  private UUID key;
+  private String key;
   private PaymentDetails paymentDetails;
 
-  public SetOrderPaymentEvent(UUID key, PaymentDetails paymentDetails) {
+  public SetOrderPaymentEvent(String key, PaymentDetails paymentDetails) {
     this.key = key;
     this.paymentDetails = paymentDetails;
   }
 
-  public UUID getKey() {
+  public String getKey() {
     return key;
   }
 

@@ -1,18 +1,17 @@
 package com.khanavali.core.domain;
 
-import com.khanavali.events.orders.OrderStatusDetails;
-
 import java.util.Date;
-import java.util.UUID;
+
+import com.khanavali.events.orders.OrderStatusDetails;
 
 public class OrderStatus {
 
-  private UUID orderId;
-  private UUID id;
+  private String orderId;
+  private String id;
   private Date statusDate;
   private String status;
 
-  public OrderStatus(UUID orderId, UUID id, final Date date, final String status) {
+  public OrderStatus(String orderId, String id, final Date date, final String status) {
     this.orderId = orderId;
     this.id = id;
     this.status = status;
@@ -27,11 +26,11 @@ public class OrderStatus {
     return status;
   }
 
-  public UUID getOrderId() {
+  public String getOrderId() {
     return orderId;
   }
 
-  public UUID getId() {
+  public String getId() {
     return id;
   }
 

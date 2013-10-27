@@ -1,4 +1,4 @@
-package com.khanavali;
+package com.khanavali.config;
 
 import com.khanavali.persistence.domain.MenuItem;
 import com.khanavali.persistence.domain.Order;
@@ -21,7 +21,7 @@ public class PersistenceConfig {
 
   @Bean
   public OrdersRepository orderRepository() {
-    return new OrdersMemoryRepository(new HashMap<UUID, Order>());
+    return new OrdersMemoryRepository(new HashMap<String, Order>());
   }
   @Bean
   public OrderStatusRepository orderStatusRepository() {

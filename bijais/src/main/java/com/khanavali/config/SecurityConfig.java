@@ -1,4 +1,4 @@
-package com.khanavali;
+package com.khanavali.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +17,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   @Override
   protected void registerAuthentication(AuthenticationManagerBuilder auth) throws Exception {
     auth.inMemoryAuthentication()
-        .withUser("letsnosh").password("noshing").roles("USER");
+        .withUser("krishna").password("krishna").roles("USER")
+        ;
+    auth.inMemoryAuthentication()
+    .withUser("sharan").password("sharan").roles("USER")
+    ;
   }
 
   @Override

@@ -26,36 +26,36 @@ public class WebDataFixture {
 	public static final int MINUTES_TO_PREPARE = 5;
 	public static final String STATUS_RECEIVED = "RECEIVED";
 
-  public static OrderCreatedEvent newOrder(UUID id) {
+  public static OrderCreatedEvent newOrder(String id) {
     return new OrderCreatedEvent(id, new OrderDetails());
   }
   
-  public static RequestOrderDetailsEvent orderDetailsRequest(UUID id) {
+  public static RequestOrderDetailsEvent orderDetailsRequest(String id) {
 	return new RequestOrderDetailsEvent(id);
 	
 }
   
-  public static OrderDetailsEvent orderDetailsEvent(UUID id) {
+  public static OrderDetailsEvent orderDetailsEvent(String id) {
 	return new OrderDetailsEvent(id, standardOrderDetails(id));
 	
 }
   
   public static OrderDetails standardOrderDetails () {
-	  return standardOrderDetails(UUID.randomUUID());
+	  return standardOrderDetails(UUID.randomUUID().toString());
 }
   
-  public static OrderDetails standardOrderDetails (UUID id) {
+  public static OrderDetails standardOrderDetails (String id) {
 	  OrderDetails orderDetails = new OrderDetails(id);
 	  orderDetails.setName(CUSTOMER_NAME);
 	  return orderDetails;
 }
   
-  public static OrderStatusEvent orderStatusEvent(UUID id) {
+  public static OrderStatusEvent orderStatusEvent(String id) {
 	  return new OrderStatusEvent(id, standardOrderStatusDetails(id));
   }
   
-  public static OrderStatusDetails standardOrderStatusDetails(UUID orderId) {
-	  return new OrderStatusDetails(orderId, UUID.randomUUID(), new Date(), STATUS_RECEIVED);
+  public static OrderStatusDetails standardOrderStatusDetails(String orderId) {
+	  return new OrderStatusDetails(orderId, UUID.randomUUID().toString(), new Date(), STATUS_RECEIVED);
   }
 
 	public static AllMenuItemsEvent allMenuItems() {

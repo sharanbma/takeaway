@@ -39,11 +39,9 @@ public class OrderStatusController {
 	@ModelAttribute("orderStatus")
 	private OrderStatus getOrderStatus(@PathVariable("orderId") String orderId) {
 		OrderDetailsEvent orderDetailsEvent = orderService
-				.requestOrderDetails(new RequestOrderDetailsEvent(UUID
-						.fromString(orderId)));
+				.requestOrderDetails(new RequestOrderDetailsEvent(orderId));
 		OrderStatusEvent orderStatusEvent = orderService
-				.requestOrderStatus(new RequestOrderStatusEvent(UUID
-						.fromString(orderId)));
+				.requestOrderStatus(new RequestOrderStatusEvent(orderId));
 		OrderStatus status = new OrderStatus();
 		status.setName(orderDetailsEvent.getOrderDetails().getName());
 		status.setOrderId(orderId);

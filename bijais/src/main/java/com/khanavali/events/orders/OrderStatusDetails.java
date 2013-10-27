@@ -5,13 +5,13 @@ import java.util.UUID;
 
 public class OrderStatusDetails {
 
-  private UUID orderId;
-  private UUID id;
+  private String orderId;
+  private String id;
   private Date statusDate;
   private String status;
 
-  public OrderStatusDetails(UUID orderId,
-      UUID id, Date statusDate, String status) {
+  public OrderStatusDetails(String orderId,
+		  String id, Date statusDate, String status) {
     this.id = id;
     this.orderId = orderId;
     this.status = status;
@@ -26,11 +26,11 @@ public class OrderStatusDetails {
     return status;
   }
 
-  public UUID getOrderId() {
+  public String getOrderId() {
     return orderId;
   }
 
-  public UUID getId() {
+  public String getId() {
     return id;
   }
 }

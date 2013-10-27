@@ -1,4 +1,4 @@
-package com.khanavali;
+package com.khanavali.config;
 
 import com.khanavali.core.services.MenuEventHandler;
 import com.khanavali.core.services.MenuService;

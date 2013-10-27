@@ -2,16 +2,15 @@ package com.khanavali.events.orders;
 
 import com.khanavali.events.RequestReadEvent;
 
-import java.util.UUID;
 
 public class RequestOrderDetailsEvent extends RequestReadEvent {
-  private UUID key;
+  private String key;
 
-  public RequestOrderDetailsEvent(UUID key) {
+  public RequestOrderDetailsEvent(String key) {
     this.key = key;
   }
 
-  public UUID getKey() {
+  public String getKey() {
     return key;
   }
 }
