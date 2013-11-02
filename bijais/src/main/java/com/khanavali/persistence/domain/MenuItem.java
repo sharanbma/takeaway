@@ -1,62 +1,89 @@
 package com.khanavali.persistence.domain;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import com.khanavali.events.menu.MenuItemDetails;
 
-import java.math.BigDecimal;
-
+@Entity(name = "MENU_ITEMS")
 public class MenuItem {
 
-  private String id;
-  private String name;
+	@Id
+	@Column(name = "MENU_ID")
+	private String id;
 
-  private BigDecimal cost;
+	private String description;
+	
+	private String name;
 
-  private int minutesToPrepare;
+	private String imageUrl;
 
-  public String getId() {
-    return id;
-  }
+	private double cost;
 
-  public void setId(String id) {
-    this.id = id;
-  }
+	private int portionSize;
 
-  public String getName() {
-    return name;
-  }
+	
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	public String getId() {
+		return id;
+	}
 
-  public void setName(String name) {
-    this.name = name;
-  }
+	public void setId(String id) {
+		this.id = id;
+	}
 
-  public BigDecimal getCost() {
-    return cost;
-  }
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 
-  public void setCost(BigDecimal cost) {
-    this.cost = cost;
-  }
+	public String getImageUrl() {
+		return imageUrl;
+	}
 
-  public int getMinutesToPrepare() {
-    return minutesToPrepare;
-  }
+	public String getName() {
+		return name;
+	}
 
-  public void setMinutesToPrepare(int minutesToPrepare) {
-    this.minutesToPrepare = minutesToPrepare;
-  }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-  public MenuItemDetails toStatusDetails() {
-    return new MenuItemDetails(id, name, cost, minutesToPrepare);
-  }
+	public double getCost() {
+		return cost;
+	}
 
-  public static MenuItem fromStatusDetails(MenuItemDetails orderStatusDetails) {
-    MenuItem item = new MenuItem();
+	public void setCost(double cost) {
+		this.cost = cost;
+	}
 
-    item.cost = orderStatusDetails.getCost();
-    item.id = orderStatusDetails.getId();
-    item.minutesToPrepare = orderStatusDetails.getMinutesToPrepare();
-    item.name = orderStatusDetails.getName();
+	public void setPortionSize(int portionSize) {
+		this.portionSize = portionSize;
+	}
+	
+	public int getPortionSize() {
+		return portionSize;
+	}
+	
+	public MenuItemDetails toStatusDetails() {
+		return new MenuItemDetails(id, name, cost, portionSize);
+	}
 
-    return item;
-  }
+	public static MenuItem fromStatusDetails(MenuItemDetails orderStatusDetails) {
+		MenuItem item = new MenuItem();
+
+		item.cost = orderStatusDetails.getCost();
+		item.id = orderStatusDetails.getId();
+		item.portionSize = orderStatusDetails.getPortionSize();
+		item.name = orderStatusDetails.getName();
+
+		return item;
+	}
 }

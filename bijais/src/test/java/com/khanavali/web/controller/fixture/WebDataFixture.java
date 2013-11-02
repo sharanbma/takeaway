@@ -1,6 +1,5 @@
 package com.khanavali.web.controller.fixture;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -22,7 +21,7 @@ public class WebDataFixture {
 	public static final String NAME = "Yummy Noodles";
 	public static final String CHEF_SPECIAL = "Special ";
 	public static final String LOW_CAL = "Low cal ";
-	public static final BigDecimal COST = new BigDecimal("10.99");
+	public static final double COST = 10.99d;
 	public static final int MINUTES_TO_PREPARE = 5;
 	public static final String STATUS_RECEIVED = "RECEIVED";
 

@@ -1,6 +1,7 @@
 package com.khanavali.core.domain;
 
 import com.khanavali.events.orders.OrderDetails;
+import com.khanavali.web.domain.CustomerInfo;
 
 import org.springframework.beans.BeanUtils;
 
@@ -32,7 +33,7 @@ public class Order {
     statusHistory = new ArrayList<OrderStatus>();
   }
 
-  public Order(final String key,final Date dateTimeOfSubmission) {
+  public Order(final String key,final Date dateTimeOfSubmission,long customerId) {
     this.key = key;
     this.dateTimeOfSubmission = dateTimeOfSubmission;
     statusHistory = new ArrayList<OrderStatus>();
@@ -89,17 +90,26 @@ public class Order {
     return this;
   }
 
+  public Customer getCustomer() {
+	return customer;
+  }
+  
+  public void setCustomer(Customer customer) {
+	this.customer = customer;
+  }
+  
   public OrderDetails toOrderDetails() {
     OrderDetails details = new OrderDetails();
 
     details.setDateTimeOfSubmission(getDateTimeOfSubmission());
     details.setKey(getKey());
+    details.setCustomerId(getCustomer().getCustomerId());
 
     return details;
   }
 
   public static Order fromOrderDetails(OrderDetails orderDetails) {
-    Order order = new Order(orderDetails.getKey(),orderDetails.getDateTimeOfSubmission());
+    Order order = new Order(orderDetails.getKey(),orderDetails.getDateTimeOfSubmission(),orderDetails.getCustomerId());
 
     BeanUtils.copyProperties(orderDetails, order);
 

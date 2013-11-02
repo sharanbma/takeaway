@@ -27,13 +27,29 @@ public class Order {
   @Column(name = "ORDER_ID")
   private String id;
 
+  @Column(name = "CUSTOMER_ID")
+  private long customerId;
+  
+  public void setCustomerId(long customerId) {
+	this.customerId = customerId;
+  }
+  
+  public long getCustomerId() {
+	return customerId;
+  }
+  
   public void setId(String id) {
     this.id = id;
   }
   
-  public Order(final Date dateTimeOfSubmission) {
+  public Order() {
+	// TODO Auto-generated constructor stub
+  }
+  
+  public Order(final Date dateTimeOfSubmission, final long customerId) {
 	    this.id = UUID.randomUUID().toString();
 	    this.dateTimeOfSubmission = dateTimeOfSubmission;
+	    this.customerId = customerId;
 	  }
 
   public void setDateTimeOfSubmission(Date dateTimeOfSubmission) {
@@ -79,7 +95,7 @@ public class Order {
   }
 
   public static Order fromOrderDetails(OrderDetails orderDetails) {
-    Order order = new Order(orderDetails.getDateTimeOfSubmission());
+    Order order = new Order(orderDetails.getDateTimeOfSubmission(),orderDetails.getCustomerId());
 
     //order.id = orderDetails.getKey().toString();
     //order.dateTimeOfSubmission = orderDetails.getDateTimeOfSubmission();

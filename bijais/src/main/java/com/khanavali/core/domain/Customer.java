@@ -1,12 +1,22 @@
 package com.khanavali.core.domain;
 
 public class Customer {
+
+  private long customerId;
   private String name;
 
   private String streetAdress;
   private String city;
   private String postalCode;
 
+  public long getCustomerId() {
+	return customerId;
+  }
+  
+  public void setCustomerId(long customerId) {
+	this.customerId = customerId;
+  }
+  
   public String getPostalCode() {
     return postalCode;
   }

@@ -6,9 +6,12 @@ import org.springframework.beans.BeanUtils;
 
 import com.khanavali.events.menu.MenuItemDetails;
 
+
 public class MenuItem {
 
+	
   private String id;
+  
   private String name;
 
   private BigDecimal cost;
