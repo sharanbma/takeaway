@@ -68,13 +68,4 @@ public class CustomerDetails {
 		this.password = password;
 	}
 
-	@Override
-	public String toString() {
-		return "CustomerDetails [customerId=" + customerId + ", firstName="
-				+ firstName + ", lastName=" + lastName + ", userId=" + userId
-				+ ", emailId=" + emailId + ", password=" + password + "]";
-	}
-
-	
-	
 }

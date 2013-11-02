@@ -7,40 +7,51 @@ import java.io.Serializable;
 
 public class CustomerInfo implements Serializable {
 
-  @NotNull
-  @NotEmpty
-  private String name;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
-  @NotNull
-  @NotEmpty
-  private String address1;
+	private String name;
 
-  @NotNull
-  @NotEmpty
-  private String postcode;
+	private String address1;
 
-  public String getName() {
-    return name;
-  }
+	private String postcode;
 
-  public void setName(String name) {
-    this.name = name;
-  }
+	@NotNull
+	@NotEmpty
+	private String emailAddress;
 
-  public String getAddress1() {
-    return address1;
-  }
+	public String getName() {
+		return name;
+	}
 
-  public void setAddress1(String address1) {
-    this.address1 = address1;
-  }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-  public String getPostcode() {
-    return postcode;
-  }
+	public String getAddress1() {
+		return address1;
+	}
 
-  public void setPostcode(String postcode) {
-    this.postcode = postcode;
-  }
+	public void setAddress1(String address1) {
+		this.address1 = address1;
+	}
+
+	public String getPostcode() {
+		return postcode;
+	}
+
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
+	}
+
+	public String getEmailAddress() {
+		return emailAddress;
+	}
+
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
+	}
 
 }
