@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MenuItemMemoryRepository implements MenuItemRepository {
+public abstract class MenuItemMemoryRepository implements MenuItemRepository {
 
 	private Map<String, MenuItem> items = new HashMap<String, MenuItem>();
 

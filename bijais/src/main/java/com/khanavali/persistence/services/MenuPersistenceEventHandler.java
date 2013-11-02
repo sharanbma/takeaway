@@ -43,8 +43,7 @@ public class MenuPersistenceEventHandler implements MenuPersistenceService {
 
   @Override
   public MenuItemDetailsEvent createMenuItem(CreateMenuItemEvent createMenuItemEvent) {
-    MenuItem item = menuItemRepository.save(
-        MenuItem.fromStatusDetails(createMenuItemEvent.getDetails()));
+    MenuItem item = menuItemRepository.save(MenuItem.fromStatusDetails(createMenuItemEvent.getDetails()));
 
     return new MenuItemDetailsEvent(
         item.getId(),

@@ -1,21 +1,20 @@
 package com.khanavali.events.menu;
 
-import java.math.BigDecimal;
 
 public class MenuItemDetails {
 
   private String id;
   private String name;
 
-  private BigDecimal cost;
+  private double cost;
 
-  private int minutesToPrepare;
+  private int portionSize;
 
-  public MenuItemDetails(String id, String name, BigDecimal cost, int minutesToPrepare) {
+  public MenuItemDetails(String id, String name, double cost, int portionSize) {
     this.id = id;
     this.name = name;
     this.cost = cost;
-    this.minutesToPrepare = minutesToPrepare;
+    this.portionSize = portionSize;
   }
 
   public String getId() {
@@ -34,19 +33,22 @@ public class MenuItemDetails {
     this.name = name;
   }
 
-  public BigDecimal getCost() {
+  public double getCost() {
     return cost;
   }
 
-  public void setCost(BigDecimal cost) {
+  public void setCost(double cost) {
     this.cost = cost;
   }
 
-  public int getMinutesToPrepare() {
-    return minutesToPrepare;
-  }
 
-  public void setMinutesToPrepare(int minutesToPrepare) {
-    this.minutesToPrepare = minutesToPrepare;
+  public int getPortionSize() {
+	return portionSize;
   }
+  
+  public void setPortionSize(int portionSize) {
+	this.portionSize = portionSize;
+  }
+  
+  
 }

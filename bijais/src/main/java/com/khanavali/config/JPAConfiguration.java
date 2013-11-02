@@ -12,6 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.orm.hibernate4.HibernateExceptionTranslator;
@@ -21,18 +22,19 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.khanavali.persistence.repository.CustomerRepository;
+import com.khanavali.persistence.repository.MenuItemRepository;
 import com.khanavali.persistence.repository.OrdersRepository;
 
 @Configuration
 @EnableJpaRepositories(basePackages = "com.khanavali.persistence.repository",
-    includeFilters = @ComponentScan.Filter(value = {OrdersRepository.class}, type = FilterType.ASSIGNABLE_TYPE))
+    includeFilters = @ComponentScan.Filter(value = {OrdersRepository.class,MenuItemRepository.class,CustomerRepository.class}, type = FilterType.ASSIGNABLE_TYPE))
 @EnableTransactionManagement
 public class JPAConfiguration {
 
   @Bean
   public DataSource dataSource() throws SQLException {
-
-    EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
+	EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
     return builder.setType(EmbeddedDatabaseType.H2).build();
   }
 
