@@ -1,24 +1,33 @@
 package com.khanavali.config;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.khanavali.events.customer.AllCustomersEvent;
 import com.khanavali.events.customer.CreateCustomerEvent;
 import com.khanavali.events.customer.CustomerDetails;
+import com.khanavali.events.customer.RequestAllCustomersEvent;
 import com.khanavali.events.menu.AllMenuItemsEvent;
 import com.khanavali.events.menu.CreateMenuItemEvent;
 import com.khanavali.events.menu.MenuItemDetails;
 import com.khanavali.events.menu.RequestAllMenuItemsEvent;
 import com.khanavali.persistence.services.CustomerPersistenceService;
 import com.khanavali.persistence.services.MenuPersistenceService;
+import com.khanavali.web.controller.SiteController;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {PersistenceConfig.class,JPAMysqlConfiguration.class})
 public class PersistenceDomainIntegrationTest {
+	
+	private static final Logger LOG = LoggerFactory.getLogger(PersistenceDomainIntegrationTest.class);
 	
 	@Autowired
 	MenuPersistenceService menuPersistenceService;
@@ -36,7 +45,6 @@ public class PersistenceDomainIntegrationTest {
 	}
 	*/
 	
-	@Test
 	public void createMenuItemsTest(){
 		
 		MenuItemDetails details1 = new MenuItemDetails("menu001", "Idli", 35.0d, 3);
@@ -57,7 +65,6 @@ public class PersistenceDomainIntegrationTest {
 		
 	}
 	
-	@Test
 	public void createCustomerTest(){
 		
 		CustomerDetails custDetails1 = new CustomerDetails(0, "Indira", "Swamy", "indira.swamy@gmail.com", "indira.swamy@gmail.com", "swamy014");
@@ -68,6 +75,21 @@ public class PersistenceDomainIntegrationTest {
 		
 		customerPersistenceService.createCustomer(createCustomer1);
 		customerPersistenceService.createCustomer(createCustomer2);
+		
+	}
+	
+	@Test
+	public void retrieveCustomerTest(){
+		
+		RequestAllCustomersEvent custs = new RequestAllCustomersEvent();
+		AllCustomersEvent customers = customerPersistenceService.requestAllCustomers(custs);
+		
+		List<CustomerDetails> allCustomers = customers.getCustomerDetails();
+		
+		for(CustomerDetails detail : allCustomers){
+			LOG.info("Customer : " + detail);
+		}
+		
 		
 	}
 	

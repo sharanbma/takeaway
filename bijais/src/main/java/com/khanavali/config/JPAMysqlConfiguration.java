@@ -1,6 +1,7 @@
 package com.khanavali.config;
 
 import java.sql.SQLException;
+import java.util.Properties;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -15,6 +16,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate4.HibernateExceptionTranslator;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaDialect;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -47,12 +49,34 @@ public class JPAMysqlConfiguration {
 		HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
 		vendorAdapter.setGenerateDdl(false);
 		vendorAdapter.setShowSql(true);
-		vendorAdapter.setDatabase(org.springframework.orm.jpa.vendor.Database.MYSQL);
+		vendorAdapter
+				.setDatabase(org.springframework.orm.jpa.vendor.Database.MYSQL);
 
 		LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 		factory.setJpaVendorAdapter(vendorAdapter);
+		Properties jpaProperties = new Properties();
+		
+		jpaProperties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQL5Dialect");
+		jpaProperties.setProperty("hibernate.connection.driver_class","com.mysql.jdbc.Driver");
+		jpaProperties.setProperty("hibernate.connection.url","jdbc:mysql://snpdb.cdzdjmavsv7l.ap-southeast-1.rds.amazonaws.com:3306/snpdb");
+		jpaProperties.setProperty("hibernate.connection.username","snproot");
+		jpaProperties.setProperty("hibernate.connection.password","snpr00t123");
+		//jpaProperties.setProperty("hibernate.hbm2ddl.auto", "validate");
+		jpaProperties.setProperty("hibernate.connection.provider_class", "org.hibernate.connection.C3P0ConnectionProvider");
+		jpaProperties.setProperty("hibernate.c3p0.maxSize", "1");
+		jpaProperties.setProperty("hibernate.c3p0.minSize", "1");
+		jpaProperties.setProperty("hibernate.c3p0.acquireIncrement", "1");
+		jpaProperties.setProperty("hibernate.c3p0.idleTestPeriod", "300");
+		jpaProperties.setProperty("hibernate.c3p0.maxStatements", "0");
+		jpaProperties.setProperty("hibernate.c3p0.timeout", "1800");
+		jpaProperties.setProperty("hibernate.c3p0.checkoutTimeout", "0");
+		jpaProperties.setProperty("hibernate.c3p0.preferredTestQuery",
+				"SELECT * FROM poolping");
+		factory.setJpaProperties(jpaProperties);
+		HibernateJpaDialect jpaDialect = new HibernateJpaDialect();
+		factory.setJpaDialect(jpaDialect);
 		factory.setPackagesToScan("com.khanavali.persistence.domain");
-		factory.setDataSource(dataSource());
+		//factory.setDataSource(dataSource());
 		factory.afterPropertiesSet();
 
 		return factory.getObject();
@@ -61,8 +85,8 @@ public class JPAMysqlConfiguration {
 	@Bean
 	public EntityManager entityManager(EntityManagerFactory entityManagerFactory) {
 		return entityManagerFactory.createEntityManager();
+		
 	}
-
 	@Bean
 	public PlatformTransactionManager transactionManager() throws SQLException {
 
