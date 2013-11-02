@@ -13,7 +13,7 @@ public class WebAppInitializer extends
   //{!begin addToRootContext}
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class<?>[] { SecurityConfig.class, JPAConfiguration.class,PersistenceConfig.class, CoreConfig.class };
+		return new Class<?>[] { SecurityConfig.class, JPAMysqlConfiguration.class,PersistenceConfig.class, CoreConfig.class };
 	}
   //{!end addToRootContext}
 
