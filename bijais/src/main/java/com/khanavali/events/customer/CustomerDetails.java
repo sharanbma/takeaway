@@ -2,7 +2,7 @@ package com.khanavali.events.customer;
 
 public class CustomerDetails {
 
-	private long customerId;
+	private long customerId = 0;
 	private String firstName;
 	private String lastName;
 

@@ -1,10 +1,11 @@
 package com.khanavali.persistence.repository;
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.khanavali.persistence.domain.Customer;
 
-
+@Transactional
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
 
   Customer save(Customer customer);

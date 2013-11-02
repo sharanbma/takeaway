@@ -7,7 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.NamedQuery;
 
 import com.khanavali.events.customer.CustomerDetails;
-import com.khanavali.events.menu.MenuItemDetails;
 
 @Entity
 @NamedQuery(name = "Customer.findAll", query = "SELECT c FROM Customer c")
