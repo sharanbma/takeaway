@@ -27,6 +27,7 @@ body {
 	padding-bottom: 40px;
 	color: #FFFFFF;
 	background-color: #133900;
+	background-image: url(/bijais-web/resources/img/jasmine.jpg);
 	font-family: "Helvetica Neue", helvetica, arial, verdana, sans-serif;
 }
 
@@ -148,14 +149,15 @@ h4 {
 	<div id="main-content">
 		<div id="home">
 			<div class="bd">
-				<h1>Sri Nrusimha Prasada</h1>
+				<h1>Shree Nrusimha Prasada</h1>
 				<!-- <a id="alert" href="#"><h4>Get Notified</h4></a>-->
 				<div style="clear: both">&nbsp;</div>
 				<div id="textArea">
 
 					<p>${errorMessage}</p>
-					<form:form action="/storeDetails" commandName="customerInfo"
-						class="navbar-form navbar-left" method="POST">
+					<form:form action="/bijais-web/storeDetails"
+						commandName="customerInfo" class="navbar-form navbar-left"
+						method="POST">
 
 						<div class="form-group">
 							<form:input path="emailAddress" class="form-control"
