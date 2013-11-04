@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -93,7 +94,7 @@ h4 {
 
 #textArea {
 	background-color: #133900;
-	display: none;
+	display: block;
 }
 
 #confirmation {
@@ -102,6 +103,36 @@ h4 {
 
 #alert {
 	text-decoration: none;
+}
+
+.btn-default { .buttonBackground (#297BBC, #fff);
+	
+}
+
+.navbar-form input {
+	margin-top: 0px !important;
+}
+
+.btn-custom {
+	background-color: #297BBC !important;
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2d95b7",
+		endColorstr="#23748e");
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#2d95b7),
+		to(#23748e));
+	background-image: -moz-linear-gradient(top, #2d95b7, #23748e);
+	background-image: -ms-linear-gradient(top, #2d95b7, #23748e);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2d95b7),
+		color-stop(100%, #23748e));
+	background-image: -webkit-linear-gradient(top, #2d95b7, #23748e);
+	background-image: -o-linear-gradient(top, #2d95b7, #23748e);
+	background-image: linear-gradient(#2d95b7, #23748e);
+	border-color: #23748e #23748e hsl(195, 60%, 32.5%);
+	color: #FFD173 !important;
+	font-size: 1em;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.16);
+	-webkit-font-smoothing: antialiased;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.16);
 }
 </style>
 <!-- See http://twitter.github.com/bootstrap/scaffolding.html#responsive -->
@@ -118,20 +149,23 @@ h4 {
 		<div id="home">
 			<div class="bd">
 				<h1>Sri Nrusimha Prasada</h1>
-				<a id="alert" href="#"><h4>Get Notified</h4></a>
+				<!-- <a id="alert" href="#"><h4>Get Notified</h4></a>-->
 				<div style="clear: both">&nbsp;</div>
 				<div id="textArea">
 
-					<form th:action="@{/storeDetails}" th:object="${customerInfo}"
+					<p>${errorMessage}</p>
+					<form:form action="/storeDetails" commandName="customerInfo"
 						class="navbar-form navbar-left" method="POST">
+
 						<div class="form-group">
-							<input type="text" th:field="*{emailAddress}"
-								class="form-control" placeholder="Please Enter Your email ID" />
-							<button type="submit" class="btn btn-default">Let me
-								know !!</button>
+							<form:input path="emailAddress" class="form-control"
+								placeholder="Please Enter Your email ID" />
+							<button type="submit" class="btn btn-custom">
+								<b>Keep me updated</b>
+							</button>
 						</div>
 
-					</form>
+					</form:form>
 				</div>
 				<div id="confirmation">Thanks, Come back later</div>
 			</div>
@@ -147,18 +181,6 @@ h4 {
 	</div>
 	<script src="http://code.jquery.com/jquery-latest.min.js"
 		type="text/javascript"></script>
-	<Script>
-		$(document).ready(function() {
-			$("#alert").click(function() {
-				$("#textArea").css("display", "block");
-			})
-		});
-		$(document).ready(function() {
-			$("#emailSubmit").click(function() {
-				$("#textArea").css("display", "hidden");
-				$("#confirmation").css("display", "block");
-			})
-		});
-	</Script>
+
 </body>
 </html>

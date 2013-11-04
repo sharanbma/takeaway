@@ -4,21 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.support.SessionStatus;
 
 import com.khanavali.core.services.CustomerService;
 import com.khanavali.core.services.MenuService;
 import com.khanavali.events.customer.CreateCustomerEvent;
 import com.khanavali.events.customer.CustomerDetails;
 import com.khanavali.events.customer.CustomerDetailsEvent;
+import com.khanavali.events.customer.RequestCustomerDetailsEvent;
 import com.khanavali.events.menu.AllMenuItemsEvent;
 import com.khanavali.events.menu.MenuItemDetails;
 import com.khanavali.events.menu.RequestAllMenuItemsEvent;
@@ -74,14 +78,33 @@ public class SiteController {
 	@RequestMapping(value = "/storeDetails", method = RequestMethod.POST)
 	public String createCustomer(
 			@ModelAttribute("customerInfo") CustomerInfo customerInfo,
-			HttpServletRequest request, Model model) {
+			HttpServletRequest request, HttpServletResponse response,
+			Model model, BindingResult bindingResult,
+			SessionStatus sessionStatus) {
 		CustomerDetails customerDetails = new CustomerDetails(0, "", "", "",
 				customerInfo.getEmailAddress(), "");
-		CustomerDetailsEvent customerDetailsEvent = customerService
-				.createCustomer(new CreateCustomerEvent(customerDetails));
-		model.addAttribute("emailId", customerDetailsEvent.getCustomerDetails()
-				.getEmailId());
-		return "redirect:/";
+
+		RequestCustomerDetailsEvent requestCustomerDetailsEvent = new RequestCustomerDetailsEvent(
+				0, null, customerInfo.getEmailAddress());
+		CustomerDetailsEvent customerDetailsEvent1 = customerService
+				.requestCustomerDetails(requestCustomerDetailsEvent);
+
+		KhanavaliValidator validator = new KhanavaliValidator();
+		validator.validate(customerInfo, bindingResult);
+
+		if (!customerDetailsEvent1.getCustomerDetails().getEmailId()
+				.equalsIgnoreCase(customerInfo.getEmailAddress())) {
+			CustomerDetailsEvent customerDetailsEvent = customerService
+					.createCustomer(new CreateCustomerEvent(customerDetails));
+			model.addAttribute("emailId", customerDetailsEvent
+					.getCustomerDetails().getEmailId());
+		} else {
+			sessionStatus.setComplete();
+			model.addAttribute("errorMessage",
+					"We already have your details. You will be notified when are in action");
+
+		}
+		return "/splash";
 
 	}
 }

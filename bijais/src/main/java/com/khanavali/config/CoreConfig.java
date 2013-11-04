@@ -19,17 +19,17 @@ public class CoreConfig {
 	public MenuService menuService(MenuPersistenceService menuPersistenceService) {
 		return new MenuEventHandler(menuPersistenceService);
 	}
-  
-	
-  @Bean
-  public OrderService orderService(OrderPersistenceService orderPersistenceService) {
-    return new OrderEventHandler(orderPersistenceService);
-  }
-  
-  @Bean
-  public CustomerService customerService(CustomerPersistenceService customerPersistenceService) {
-    return new CustomerEventHandler(customerPersistenceService);
-  }
-  
-  
+
+	@Bean
+	public OrderService orderService(
+			OrderPersistenceService orderPersistenceService) {
+		return new OrderEventHandler(orderPersistenceService);
+	}
+
+	@Bean
+	public CustomerService customerService(
+			CustomerPersistenceService customerPersistenceService) {
+		return new CustomerEventHandler(customerPersistenceService);
+	}
+
 }
