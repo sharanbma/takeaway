@@ -7,8 +7,15 @@
 <meta name="description" content="" />
 <meta name="author" content="Simplicity Itself" />
 
-<title>Bijai's Rasoi Mane</title>
-<link href="/bijais-web/resources/css/bootstrap.min.css"
+<title>Shree Nrusimha Prasada</title>
+<link
+	href="http://localhost:8080/bijais-web/resources/css/bootstrap.min.css"
+	rel="stylesheet" />
+
+
+<!-- bxSlider CSS file -->
+<link
+	href="http://localhost:8080/bijais-web/resources/css/jquery.bxslider.css"
 	rel="stylesheet" />
 
 <style>
@@ -27,7 +34,7 @@ body {
 	padding-bottom: 40px;
 	color: #FFFFFF;
 	background-color: #133900;
-	background-image: url(/bijais-web/resources/img/jasmine.jpg);
+	/*background-image: url(/bijais-web/resources/img/jasmine.jpg);*/
 	font-family: "Helvetica Neue", helvetica, arial, verdana, sans-serif;
 }
 
@@ -135,6 +142,96 @@ h4 {
 	-webkit-font-smoothing: antialiased;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.16);
 }
+
+#point1 {
+	display: none;
+	float: left;
+	height: 40px;
+	width: 300px;
+	font-size: 2em;
+	color: #277F9B;
+}
+
+#point2 {
+	display: none;
+	float: left;
+	height: 40px;
+	width: 150px;
+	font-size: 2em;
+	color: #277F9B;
+}
+
+#point3 {
+	display: none;
+	float: left;
+	height: 40px;
+	width: 150px;
+	font-size: 2em;
+	color: #277F9B;
+}
+
+#point4 {
+	display: none;
+	float: left;
+	height: 40px;
+	width: 400px;
+	font-size: 2em;
+	color: #277F9B;
+}
+
+#point5 {
+	display: none;
+	float: left;
+	height: 40px;
+	width: 150px;
+	font-size: 2em;
+	color: #277F9B;
+}
+
+#titlePoint {
+	display: none;
+	float: left;
+	height: 40px;
+	width: 200px;
+	font-size: 1em;
+	color: #277F9B;
+}
+
+#goodFood {
+	margin-left: 60px;
+}
+
+#perfect {
+	display: none;
+	margin-left: 60px;
+	font-size: 1em;
+	color: #277F9B;
+}
+
+.comma {
+	color: #FFD173;
+	font-size: 1.5em;
+}
+
+.qualityPoint1 {
+	color: #277F9B;
+	font-size: 2em;
+	display: block;
+	height: 90px;
+}
+
+.qualityPoint2 {
+	color: #277F9B;
+	font-size: 2em;
+	display: block;
+	height: 90px;
+}
+
+.bottom {
+	color: #FFD173;
+	font-size: 12pt;
+	text-align: center;
+}
 </style>
 <!-- See http://twitter.github.com/bootstrap/scaffolding.html#responsive -->
 
@@ -148,6 +245,14 @@ h4 {
 	<div style="clear: both"></div>
 	<div id="main-content">
 		<div id="home">
+			<div id="goodFood">
+				<div id="titlePoint">Good Food means..</div>
+				<div id="point1">Fresh and Pure.</div>
+				<div id="point2">Tastes.</div>
+				<div id="point3">Looks.</div>
+				<div id="point4">and smells delicious.</div>
+				<div id="point5">Nutritious value.</div>
+			</div>
 			<div class="bd">
 				<h1>Shree Nrusimha Prasada</h1>
 				<!-- <a id="alert" href="#"><h4>Get Notified</h4></a>-->
@@ -169,11 +274,22 @@ h4 {
 
 					</form:form>
 				</div>
-				<div id="confirmation">Thanks, Come back later</div>
 			</div>
 		</div>
 	</div>
-
+	<div class="bottom">
+		<div class="qualityPoint1">
+			<div style="padding-top: 20px">
+				<span class="comma">&#8220;</span> Utmost care goes into the
+				purchase of vegetables.<span class="comma">&#8221;</span>
+			</div>
+		</div>
+		<div class="qualityPoint2">
+			<div style="padding-top: 20px">
+				<span class="comma">&#8220;</span>KARMARAMA.<span class="comma">&#8221;</span>
+			</div>
+		</div>
+	</div>
 	<div class="find-us">
 		<p>Phone Number: 9980890573</p>
 		<p>1424/5, 20th B Cross</p>
@@ -183,6 +299,21 @@ h4 {
 	</div>
 	<script src="http://code.jquery.com/jquery-latest.min.js"
 		type="text/javascript"></script>
-
+	<script
+		src="http://localhost:8080/bijais-web/resources/js/jquery.bxslider.min.js"></script>
+	<SCRIPT>
+		$(document).ready(function() {
+			$("#titlePoint").delay(1000).fadeIn();
+			$("#point1").delay(2000).fadeIn();
+			$("#point2").delay(3000).fadeIn();
+			$("#point3").delay(4000).fadeIn();
+			$("#point4").delay(5000).fadeIn();
+			$("#perfect").delay(7000).fadeIn();
+			$('.bottom').delay(9500).bxSlider({
+				auto : true,
+				autoControls : false
+			});
+		});
+	</SCRIPT>
 </body>
 </html>

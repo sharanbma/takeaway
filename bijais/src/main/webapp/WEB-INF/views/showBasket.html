@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,25 +7,227 @@
 <meta name="description" content="" />
 <meta name="author" content="Simplicity Itself" />
 
-<title>Bijai's Rasoi Mane</title>
+<title>Shree Nrusimha Prasada</title>
+<link
+	href="http://localhost:8080/bijais-web/resources/css/bootstrap.min.css"
+	rel="stylesheet" />
 
-<link href="/bijais-web/resources/css/bootstrap.min.css"
-	rel="stylesheet">
-</link>
+
+<!-- bxSlider CSS file -->
+<link
+	href="http://localhost:8080/bijais-web/resources/css/jquery.bxslider.css"
+	rel="stylesheet" />
+
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskannada.css)
+	;
+
+body {
+	font-family: "Noto Sans Kannada", sans-serif;
+	font-size: 19.0px;
+	line-height: 1.11em;
+}
+</style>
 <style type="text/css">
 body {
 	padding-top: 60px;
 	padding-bottom: 40px;
+	color: #FFFFFF;
+	background-color: #133900;
+	/*background-image: url(/bijais-web/resources/img/jasmine.jpg);*/
+	font-family: "Helvetica Neue", helvetica, arial, verdana, sans-serif;
+}
+
+html,body {
+	height: 100%;
 }
 
 .sidebar-nav {
 	padding: 9px 0;
 }
+
+.nav .gn-signup {
+	color: #FF0084;
+}
+
+#main-content {
+	background-color: #133900;
+}
+
+h1 {
+	font-size: 3em;
+	font-weight: bold;
+}
+
+h1,h2,h3 {
+	font-size: 3em;
+	line-height: 1em;
+}
+
+h4 {
+	color: #FFD173;
+}
+
+#fl-mayday {
+	font-size: 1.2em;
+}
+
+#home .bd {
+	height: 36em;
+	left: 50%;
+	margin-left: -32em;
+	margin-top: -5em;
+	position: absolute;
+	text-align: center;
+	top: 40%;
+	width: 64em;
+	text-align: center;
+}
+
+.find-us {
+	left: 40%;
+	margin-top: 15em;
+	font-size: 12pt;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+	color: #FFD173;
+	position: absolute;
+}
+
+.find-us p {
+	text-align: center;
+	margin: 0;
+}
+
+#textArea {
+	background-color: #133900;
+	display: block;
+}
+
+#confirmation {
+	display: none;
+}
+
+#alert {
+	text-decoration: none;
+}
+
+.btn-default { .buttonBackground (#297BBC, #fff);
+	
+}
+
+.navbar-form input {
+	margin-top: 0px !important;
+}
+
+.btn-custom {
+	background-color: #297BBC !important;
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2d95b7",
+		endColorstr="#23748e");
+	background-image: -khtml-gradient(linear, left top, left bottom, from(#2d95b7),
+		to(#23748e));
+	background-image: -moz-linear-gradient(top, #2d95b7, #23748e);
+	background-image: -ms-linear-gradient(top, #2d95b7, #23748e);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2d95b7),
+		color-stop(100%, #23748e));
+	background-image: -webkit-linear-gradient(top, #2d95b7, #23748e);
+	background-image: -o-linear-gradient(top, #2d95b7, #23748e);
+	background-image: linear-gradient(#2d95b7, #23748e);
+	border-color: #23748e #23748e hsl(195, 60%, 32.5%);
+	color: #FFD173 !important;
+	font-size: 1em;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.16);
+	-webkit-font-smoothing: antialiased;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.16);
+}
+
+#point1 {
+	display: none;
+	float: left;
+	height: 40px;
+	width: 300px;
+	font-size: 2em;
+	color: #27809D;
+}
+
+#point2 {
+	display: none;
+	float: left;
+	height: 40px;
+	width: 150px;
+	font-size: 2em;
+	color: #27809D;
+}
+
+#point3 {
+	display: none;
+	float: left;
+	height: 40px;
+	width: 150px;
+	font-size: 2em;
+	color: #27809D;
+}
+
+#point4 {
+	display: none;
+	float: left;
+	height: 40px;
+	width: 400px;
+	font-size: 2em;
+	color: #27809D;
+}
+
+#point5 {
+	display: none;
+	float: left;
+	height: 40px;
+	width: 150px;
+	font-size: 2em;
+	color: #27809D;
+}
+
+#titlePoint {
+	display: none;
+	float: left;
+	height: 40px;
+	width: 200px;
+	font-size: 1em;
+	color: #27809D;
+}
+
+#goodFood {
+	margin-left: 60px;
+}
+
+#perfect {
+	display: none;
+	margin-left: 60px;
+	font-size: 1em;
+	color: #27809D;
+}
+
+.comma {
+	color: #FFD173;
+	font-size: 3em;
+}
+
+#qualityPoint1 {
+	color: #297BBC;
+	font-size: 3em;
+	display: none;
+}
+
+.bottom {
+	color: #FFD173;
+	font-size: 12pt;
+	position: absolute;
+	text-align: center;
+	top: 50%;
+}
 </style>
 <!-- See http://twitter.github.com/bootstrap/scaffolding.html#responsive -->
-<link href="/bijais-web/resources/css/bootstrap-responsive.min.css"
-	rel="stylesheet">
-</link>
 
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
@@ -33,53 +236,99 @@ body {
 </head>
 <body>
 
-	<div th:include="layout :: head"></div>
-
-	<div class="container-fluid">
-		<div th:include="layout :: left"></div>
-
-		<div class="hero-unit span9">
-			<h3>Basket</h3>
-			<p>
-				<a class="btn btn-primary btn-large" href="/bijais-web/">Continue
-					eating</a> <a th:if="${basket.size > 0}"
-					class="btn btn-primary btn-large" href="/bijais-web/checkout">Go
-					ahead and order</a>
-			</p>
-		</div>
-
-		<div class="row-fluid">
-			<div class="span8">
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Name</th>
-							<th>Cost</th>
-							<th>Mins to prepare</th>
-							<th>Action</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="basketItem : ${basket.items}">
-							<td th:text="${basketItem.id}"></td>
-							<td th:text="${basketItem.name}"></td>
-							<td th:text="${basketItem.cost}"></td>
-							<td th:text="${basketItem.minutesToPrepare}"></td>
-							<td>
-								<form id="${itemFormId}" action="/bijais-web/removeFromBasket"
-									method="POST">
-									<input id="id" name="id" type="hidden"
-										th:value="${basketItem.id}" /> <input type="submit"
-										value="Remove" />
-								</form>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-				<div th:include="layout :: foot"></div>
+	<div style="clear: both"></div>
+	<div id="main-content">
+		<div id="home">
+			<div id="goodFood">
+				<div id="titlePoint">Good Food means..</div>
+				<div id="point1">Fresh and Pure.</div>
+				<div id="point2">Tastes.</div>
+				<div id="point3">Looks.</div>
+				<div id="point4">and smells delicious.</div>
+				<div id="point5">Nutritious value.</div>
+				<div id="perfect">To make food this perfect....</div>
 			</div>
+
+
+
+			<div class="bd">
+				<h1>Shree Nrusimha Prasada</h1>
+				<!-- <a id="alert" href="#"><h4>Get Notified</h4></a>-->
+				<div style="clear: both">&nbsp;</div>
+				<div id="textArea">
+					<p></p>
+					<form id="customerInfo" class="navbar-form navbar-left"
+						action="/bijais-web/storeDetails" method="POST">
+
+						<div class="form-group">
+							<input id="emailAddress" name="emailAddress"
+								placeholder="Please Enter Your email ID" class="form-control"
+								type="text" value="" />
+							<button type="submit" class="btn btn-custom">
+								<b>Keep me updated</b>
+							</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+
+
 		</div>
 	</div>
+	<ul class="bottom">
+		<li>
+			<div id="qualityPoint1">
+				<span class="comma">&#8220;</span> Utmost care goes into the
+				purchase of vegetables.<span class="comma">&#8221;</span>
+			</div>
+		</li>
+		<li>
+			<div id="qualityPoint2">
+				<span class="comma">&#8220;</span> Utmost care goes into the
+				purchase of vegetables.<span class="comma">&#8221;</span>
+			</div>
+		</li>
+		<li>
+			<div id="qualityPoint3">
+				<span class="comma">&#8220;</span> Utmost care goes into the
+				purchase of vegetables.<span class="comma">&#8221;</span>
+			</div>
+		</li>
+		<li>
+			<div id="qualityPoint4">
+				<span class="comma">&#8220;</span> Utmost care goes into the
+				purchase of vegetables.<span class="comma">&#8221;</span>
+			</div>
+		</li>
+	</ul>
+
+	<div class="find-us">
+		<p>Phone Number: 9980890573</p>
+		<p>1424/5, 20th B Cross</p>
+		<p>9th Main road MCECHS Layout</p>
+		<p>B Block Sahakar Nagar</p>
+		<p>Bangalore 560092</p>
+	</div>
+	<script src="http://code.jquery.com/jquery-latest.min.js"
+		type="text/javascript"></script>
+	<script
+		src="http://localhost:8080/bijais-web/resources/js/jquery.bxslider.min.js"></script>
+	<SCRIPT>
+		$(document).ready(function() {
+			$("#titlePoint").delay(1000).fadeIn();
+			$("#point1").delay(2000).fadeIn();
+			$("#point2").delay(3000).fadeIn();
+			$("#point3").delay(4000).fadeIn();
+			$("#point4").delay(5000).fadeIn();
+			$("#perfect").delay(7000).fadeIn();
+
+			$("#qualityPoint1").delay(8500).fadeIn();
+			$('.bottom').delay(9500).bxSlider({
+				auto : true,
+				autoControls : true
+			});
+		});
+	</SCRIPT>
 </body>
 </html>
