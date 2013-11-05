@@ -45,18 +45,32 @@ public class SiteController {
 
 	@Autowired
 	private CustomerService customerService;
+	
+	private List<MenuItem> menuDetails = new ArrayList<MenuItem>();
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String getCurrentMenu(Model model) {
 		LOG.debug("Yummy MenuItemDetails to home view");
-		model.addAttribute("menuItems", getMenuItems(menuService
-				.requestAllMenuItems(new RequestAllMenuItemsEvent())));
+		
+		if(!inited){
+			init();
+		}
+		model.addAttribute("menuItems", menuDetails);
 		return "/splash";
 	}
 
-	private List<MenuItem> getMenuItems(AllMenuItemsEvent requestAllMenuItems) {
-		List<MenuItem> menuDetails = new ArrayList<MenuItem>();
+	private volatile boolean inited = false;
+	
+	public void init() {
+		// Get menu items
+		inited = true;
+		getMenuItems(menuService
+				.requestAllMenuItems(new RequestAllMenuItemsEvent()));
 
+	}
+	
+	private List<MenuItem> getMenuItems(AllMenuItemsEvent requestAllMenuItems) {
+		
 		for (MenuItemDetails menuItemDetails : requestAllMenuItems
 				.getMenuItemDetails()) {
 			menuDetails.add(MenuItem.fromMenuDetails(menuItemDetails));
@@ -84,6 +98,10 @@ public class SiteController {
 		CustomerDetails customerDetails = new CustomerDetails(0, "", "", "",
 				customerInfo.getEmailAddress(), "");
 
+		if(LOG.isInfoEnabled()){
+			LOG.info("Register for updates request : " + customerInfo.getEmailAddress());
+		}
+		
 		RequestCustomerDetailsEvent requestCustomerDetailsEvent = new RequestCustomerDetailsEvent(
 				0, null, customerInfo.getEmailAddress());
 		CustomerDetailsEvent customerDetailsEvent1 = customerService
@@ -92,7 +110,8 @@ public class SiteController {
 		KhanavaliValidator validator = new KhanavaliValidator();
 		validator.validate(customerInfo, bindingResult);
 
-		if (!customerDetailsEvent1.getCustomerDetails().getEmailId()
+		if (customerDetailsEvent1.getCustomerDetails() == null || 
+				!customerDetailsEvent1.getCustomerDetails().getEmailId()
 				.equalsIgnoreCase(customerInfo.getEmailAddress())) {
 			CustomerDetailsEvent customerDetailsEvent = customerService
 					.createCustomer(new CreateCustomerEvent(customerDetails));

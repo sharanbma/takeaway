@@ -13,7 +13,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.khanavali.events.customer.AllCustomersEvent;
 import com.khanavali.events.customer.CreateCustomerEvent;
 import com.khanavali.events.customer.CustomerDetails;
+import com.khanavali.events.customer.CustomerDetailsEvent;
 import com.khanavali.events.customer.RequestAllCustomersEvent;
+import com.khanavali.events.customer.RequestCustomerDetailsEvent;
 import com.khanavali.events.menu.AllMenuItemsEvent;
 import com.khanavali.events.menu.CreateMenuItemEvent;
 import com.khanavali.events.menu.MenuItemDetails;
@@ -90,6 +92,11 @@ public class PersistenceDomainIntegrationTest {
 			LOG.info("Customer : " + detail);
 		}
 		
+		CustomerDetailsEvent details = customerPersistenceService.requestCustomerDetails(new RequestCustomerDetailsEvent(0, null, "krishna@gmail.com"));
+		
+		LOG.info("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
+		LOG.info("Details : " + details);
+		LOG.info("+++++++++++++++++++++++++++++++++++++++++++++++++++++");
 		
 	}
 	

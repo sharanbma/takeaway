@@ -38,4 +38,13 @@ public class CustomerDetailsEvent extends ReadEvent {
 		ev.entityFound = false;
 		return ev;
 	}
+
+	@Override
+	public String toString() {
+		return "CustomerDetailsEvent [id=" + id + ", key=" + key
+				+ ", customerDetails=" + customerDetails + "]";
+	}
+	
+	
+	
 }
