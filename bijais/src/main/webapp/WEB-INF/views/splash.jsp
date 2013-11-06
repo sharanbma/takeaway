@@ -232,6 +232,14 @@ h4 {
 	font-size: 12pt;
 	text-align: center;
 }
+
+.error-msg {
+	color: #BC5916;
+}
+
+.success-msg {
+	color: #FFC301;
+}
 </style>
 <!-- See http://twitter.github.com/bootstrap/scaffolding.html#responsive -->
 
@@ -259,7 +267,8 @@ h4 {
 				<div style="clear: both">&nbsp;</div>
 				<div id="textArea">
 
-					<p>${errorMessage}</p>
+					<p class="error-msg">${errorMessage}</p>
+					<p class="success-msg">${successMessage}</p>
 					<form:form action="/bijais-web/storeDetails"
 						commandName="customerInfo" class="navbar-form navbar-left"
 						method="POST">
