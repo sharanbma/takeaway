@@ -9,13 +9,13 @@
 
 <title>Shree Nrusimha Prasada</title>
 <link
-	href="http://localhost:8080/bijais-web/resources/css/bootstrap.min.css"
+	href="resources/css/bootstrap.min.css"
 	rel="stylesheet" />
 
 
 <!-- bxSlider CSS file -->
 <link
-	href="http://localhost:8080/bijais-web/resources/css/jquery.bxslider.css"
+	href="resources/css/jquery.bxslider.css"
 	rel="stylesheet" />
 
 <style>
@@ -34,7 +34,7 @@ body {
 	padding-bottom: 40px;
 	color: #FFFFFF;
 	background-color: #133900;
-	/*background-image: url(/bijais-web/resources/img/jasmine.jpg);*/
+	/*background-image: url(resources/img/jasmine.jpg);*/
 	font-family: "Helvetica Neue", helvetica, arial, verdana, sans-serif;
 }
 
@@ -329,7 +329,7 @@ h4 {
 	<script src="http://code.jquery.com/jquery-latest.min.js"
 		type="text/javascript"></script>
 	<script
-		src="http://localhost:8080/bijais-web/resources/js/jquery.bxslider.min.js"></script>
+		src="resources/js/jquery.bxslider.min.js"></script>
 	<SCRIPT>
 		$(document).ready(function() {
 			$("#titlePoint").delay(1000).fadeIn();
