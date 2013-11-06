@@ -280,13 +280,33 @@ h4 {
 	<div class="bottom">
 		<div class="qualityPoint1">
 			<div style="padding-top: 20px">
-				<span class="comma">&#8220;</span> Utmost care goes into the
-				purchase of vegetables.<span class="comma">&#8221;</span>
+				<span class="comma">&#8220;</span>Hygiene is paramount.<span class="comma">&#8221;</span>
+			</div>
+		</div>
+		<div class="qualityPoint1">
+			<div style="padding-top: 20px">
+				<span class="comma">&#8220;</span>Utmost care goes into the
+				preparation of vegetables used in our cooking.<span class="comma">&#8221;</span>
 			</div>
 		</div>
 		<div class="qualityPoint2">
 			<div style="padding-top: 20px">
-				<span class="comma">&#8220;</span>KARMARAMA.<span class="comma">&#8221;</span>
+				<span class="comma">&#8220;</span>Care is taken to ensure that the offerings are nutritious and healthy.<span class="comma">&#8221;</span>
+			</div>
+		</div>
+		<div class="qualityPoint2">
+			<div style="padding-top: 20px">
+				<span class="comma">&#8220;</span>Premium quality Sona Masoori Rice is used in all rice preparations.<span class="comma">&#8221;</span>
+			</div>
+		</div>
+		<div class="qualityPoint2">
+			<div style="padding-top: 20px">
+				<span class="comma">&#8220;</span>Pure "Nandini" brand ghee from KMF is used in preparation of sweets, seasoning.<span class="comma">&#8221;</span>
+			</div>
+		</div>
+		<div class="qualityPoint2">
+			<div style="padding-top: 20px">
+				<span class="comma">&#8220;</span>Care is taken to ensure that the offerings are nutritious and healthy.<span class="comma">&#8221;</span>
 			</div>
 		</div>
 	</div>
