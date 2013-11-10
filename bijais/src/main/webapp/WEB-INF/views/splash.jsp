@@ -217,77 +217,42 @@ body {
     ================================================== -->
 	<!-- Wrap the rest of the page in another container to center all the content. -->
 
-	<div class="container marketing">
+	<div class="container">
 
-		<!-- Three columns of text below the carousel -->
-		<div class="row"></div>
-	</div>
-	<!-- /.row -->
-	</div>
-	<!-- /.container -->
-
-
-
-
-
-
-
-	<!-- Marketing messaging and featurettes
-    ================================================== -->
-	<!-- Wrap the rest of the page in another container to center all the content. -->
-
-	<div class="container marketing">
-
-		<!-- Three columns of text below the carousel -->
-		<div class="row">
-			<div class="col-xs-3 col-sm-1"></div>
-			<!-- /.col-lg-4 -->
-			<div class="col-xs-8 col-sm-9">
-				<form:form action="/bijais-web/storeDetails"
-					commandName="customerInfo" class="navbar-form navbar-left"
-					method="POST">
-					<h1>Shree Nrusimha Prasada</h1>
-					<div class="form-group">
-						<form:input path="emailAddress" class="form-control"
-							placeholder="Please Enter Your email ID" />
-					</div>
-					<button type="submit" class="btn btn-custom">
-						<b>Keep me updated</b>
-					</button>
-					<c:if test="${not empty errorMessage}">
-						<p class="error">${errorMessage}</p>
-					</c:if>
-					<c:if test="${not empty successMessage}">
-						<p class="success">${successMessage}</p>
-					</c:if>
-				</form:form>
+		<form:form action="/bijais-web/storeDetails"
+			commandName="customerInfo" class="navbar-form navbar-left"
+			method="POST">
+			<h1>Shree Nrusimha Prasada</h1>
+			<div class="form-group">
+				<form:input path="emailAddress" class="form-control"
+					placeholder="Please Enter Your email ID" />
 			</div>
-			<!-- /.col-lg-4 -->
-			<div class="col-xs-3 col-sm-2"></div>
-			<!-- /.col-lg-4 -->
-		</div>
+			<button type="submit" class="btn btn-custom">
+				<b>Keep me updated</b>
+			</button>
+			<c:if test="${not empty errorMessage}">
+				<p class="error">${errorMessage}</p>
+			</c:if>
+			<c:if test="${not empty successMessage}">
+				<p class="success">${successMessage}</p>
+			</c:if>
+		</form:form>
 	</div>
 	<!-- /.row -->
 
 	<div style="clear: both">&nbsp;</div>
+	<div style="clear: both">&nbsp;</div>
+	<div style="clear: both">&nbsp;</div>
+	<div style="clear: both">&nbsp;</div>
+	<div style="clear: both">&nbsp;</div>
 
-	<div class="container marketing">
-
-		<!-- Three columns of text below the carousel -->
-		<div class="row">
-			<div class="col-xs-3 col-sm-1"></div>
-			<!-- /.col-lg-4 -->
-			<div class="col-xs-8 col-sm-9">
-				<p>Phone Number: 9980890573</p>
-				<p>1424/5, 20th B Cross</p>
-				<p>9th Main road MCECHS Layout</p>
-				<p>B Block Sahakar Nagar</p>
-				<p>Bangalore 560092</p>
-			</div>
-			<!-- /.col-lg-4 -->
-			<div class="col-xs-3 col-sm-2"></div>
-			<!-- /.col-lg-4 -->
-		</div>
+	<div class="container">
+		<b>We are here :</b>
+		<p>Phone Number: +91 9886 783 607</p>
+		<p>1424/5, 20th B Cross</p>
+		<p>9th Main road MCECHS Layout</p>
+		<p>B Block Sahakar Nagar</p>
+		<p>Bangalore 560092</p>
 	</div>
 
 
