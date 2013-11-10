@@ -123,7 +123,7 @@ public class SiteController {
 					"We have got your contact now, You will be notified when we are ready to accept your orders online");
 		} else {
 			sessionStatus.setComplete();
-			model.addAttribute(
+			request.setAttribute(
 					"errorMessage",
 					"We already have your details, You will be notified when we are ready to accept your orders online");
 
