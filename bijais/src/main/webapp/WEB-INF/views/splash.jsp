@@ -1,128 +1,74 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="" />
-<meta name="author" content="Simplicity Itself" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
 
 <title>Shree Nrusimha Prasada</title>
-<link
-	href="resources/css/bootstrap.min.css"
-	rel="stylesheet" />
 
+<!-- Bootstrap core CSS -->
+<link href="/bijais-web/resources/css/bootstrap.css" rel="stylesheet">
 
-<!-- bxSlider CSS file -->
-<link
-	href="resources/css/jquery.bxslider.css"
-	rel="stylesheet" />
+<!-- Just for debugging purposes. Don't actually copy this line! -->
+<!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+<!-- Custom styles for this template -->
+<link href="/bijais-web/resources/css/carousel.css" rel="stylesheet">
 <style>
-@import url(http://fonts.googleapis.com/earlyaccess/notosanskannada.css)
-	;
-
-body {
-	font-family: "Noto Sans Kannada", sans-serif;
-	font-size: 19.0px;
-	line-height: 1.11em;
-}
-</style>
-<style type="text/css">
-body {
-	padding-top: 60px;
-	padding-bottom: 40px;
-	color: #FFFFFF;
-	background-color: #133900;
-	/*background-image: url(resources/img/jasmine.jpg);*/
-	font-family: "Helvetica Neue", helvetica, arial, verdana, sans-serif;
+.navbar-form {
+	margin-left: 30%;
 }
 
-html,body {
-	height: 100%;
-}
-
-.sidebar-nav {
-	padding: 9px 0;
-}
-
-.nav .gn-signup {
-	color: #FF0084;
-}
-
-#main-content {
-	background-color: #133900;
+.navbar-form .form-group {
+	display: inline-block;
+	margin-bottom: 0;
+	margin-left: 10%;
+	vertical-align: middle;
 }
 
 h1 {
-	font-size: 3em;
-	font-weight: bold;
+	font-size: 3.2em;
 }
 
-h1,h2,h3 {
-	font-size: 3em;
-	line-height: 1em;
+body {
+	background-color: #fff;
 }
 
-h4 {
-	color: #FFD173;
-}
-
-#fl-mayday {
-	font-size: 1.2em;
-}
-
-#home .bd {
-	height: 36em;
-	left: 50%;
-	margin-left: -32em;
-	margin-top: -5em;
-	position: absolute;
+.carousel-caption {
+	color: #E5C474;
 	text-align: center;
-	top: 40%;
-	width: 64em;
-	text-align: center;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
-.find-us {
-	left: 40%;
-	margin-top: 15em;
-	font-size: 12pt;
-	position: absolute;
-	text-align: center;
-	top: 50%;
-	color: #FFD173;
-	position: absolute;
+.carousel-control.left {
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0px,
+		rgba(0, 0, 0, 0) 100%);
+	background-repeat: repeat-x;
+	background-color: #2B8DAD;
 }
 
-.find-us p {
-	text-align: center;
-	margin: 0;
-}
-
-#textArea {
-	background-color: #133900;
-	display: block;
-}
-
-#confirmation {
-	display: none;
-}
-
-#alert {
-	text-decoration: none;
-}
-
-.btn-default { .buttonBackground (#297BBC, #fff);
-	
-}
-
-.navbar-form input {
-	margin-top: 0px !important;
+.carousel-control.right {
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0px,
+		rgba(0, 0, 0, 0) 100%);
+	background-repeat: repeat-x;
+	left: auto;
+	background-color: #2B8DAD;
+	right: 0;
 }
 
 .btn-custom {
-	background-color: #297BBC !important;
+	background-color: #080939 !important;
 	background-repeat: repeat-x;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2d95b7",
 		endColorstr="#23748e");
@@ -143,206 +89,214 @@ h4 {
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.16);
 }
 
-#point1 {
-	display: none;
-	float: left;
-	height: 40px;
-	width: 300px;
-	font-size: 2em;
-	color: #277F9B;
+.info,.success,.warning,.error,.validation {
+	border: 1px solid;
+	margin: 10px 0px;
+	padding: 15px 10px 15px 50px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
 }
 
-#point2 {
-	display: none;
-	float: left;
-	height: 40px;
-	width: 150px;
-	font-size: 2em;
-	color: #277F9B;
+.info {
+	color: #00529B;
+	background-color: #BDE5F8;
+	background-image: url('info.png');
 }
 
-#point3 {
-	display: none;
-	float: left;
-	height: 40px;
-	width: 150px;
-	font-size: 2em;
-	color: #277F9B;
+.success {
+	color: #4F8A10;
+	background-color: #DFF2BF;
+	background-image: url('success.png');
 }
 
-#point4 {
-	display: none;
-	float: left;
-	height: 40px;
-	width: 400px;
-	font-size: 2em;
-	color: #277F9B;
+.warning {
+	color: #9F6000;
+	background-color: #FEEFB3;
+	background-image: url('warning.png');
 }
 
-#point5 {
-	display: none;
-	float: left;
-	height: 40px;
-	width: 150px;
-	font-size: 2em;
-	color: #277F9B;
-}
-
-#titlePoint {
-	display: none;
-	float: left;
-	height: 40px;
-	width: 200px;
-	font-size: 1em;
-	color: #277F9B;
-}
-
-#goodFood {
-	margin-left: 60px;
-}
-
-#perfect {
-	display: none;
-	margin-left: 60px;
-	font-size: 1em;
-	color: #277F9B;
-}
-
-.comma {
-	color: #FFD173;
-	font-size: 1.5em;
-}
-
-.qualityPoint1 {
-	color: #277F9B;
-	font-size: 2em;
-	display: block;
-	height: 90px;
-}
-
-.qualityPoint2 {
-	color: #277F9B;
-	font-size: 2em;
-	display: block;
-	height: 90px;
-}
-
-.bottom {
-	color: #FFD173;
-	font-size: 12pt;
-	text-align: center;
-}
-
-.error-msg {
-	color: #BC5916;
-}
-
-.success-msg {
-	color: #FFC301;
+.error {
+	color: #D8000C;
+	background-color: #FFBABA;
+	background-image: url('error.png');
 }
 </style>
-<!-- See http://twitter.github.com/bootstrap/scaffolding.html#responsive -->
-
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 </head>
+<!-- NAVBAR
+================================================== -->
 <body>
 
-	<div style="clear: both"></div>
-	<div id="main-content">
-		<div id="home">
-			<div id="goodFood">
-				<div id="titlePoint">Good Food means..</div>
-				<div id="point1">Fresh and Pure.</div>
-				<div id="point2">Tastes.</div>
-				<div id="point3">Looks.</div>
-				<div id="point4">and smells delicious.</div>
-				<div id="point5">Nutritious value.</div>
+
+
+	<!-- Carousel
+    ================================================== -->
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+
+		<div class="carousel-inner">
+			<div class="item active">
+
+				<div class="container">
+					<div class="carousel-caption">STARTING TEXT</div>
+				</div>
 			</div>
-			<div class="bd">
-				<h1>Shree Nrusimha Prasada</h1>
-				<!-- <a id="alert" href="#"><h4>Get Notified</h4></a>-->
-				<div style="clear: both">&nbsp;</div>
-				<div id="textArea">
+			<div class="item">
 
-					<p class="error-msg">${errorMessage}</p>
-					<p class="success-msg">${successMessage}</p>
-					<form:form action="/bijais-web/storeDetails"
-						commandName="customerInfo" class="navbar-form navbar-left"
-						method="POST">
+				<div class="container">
+					<div class="carousel-caption">
+						<h2>Hygiene is paramount.</h2>
+						<p>Description goes here</p>
 
-						<div class="form-group">
-							<form:input path="emailAddress" class="form-control"
-								placeholder="Please Enter Your email ID" />
-							<button type="submit" class="btn btn-custom">
-								<b>Keep me updated</b>
-							</button>
-						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item">
 
-					</form:form>
+				<div class="container">
+					<div class="carousel-caption">
+						<h2>Utmost care goes into the preparation of vegetables used
+							in our cooking.</h2>
+						<p>Description goes here</p>
+
+					</div>
+				</div>
+			</div>
+			<div class="item">
+
+				<div class="container">
+					<div class="carousel-caption">
+						<h2>Care is taken to ensure that the offerings are nutritious
+							and healthy.</h2>
+						<p>Description goes here</p>
+
+					</div>
+				</div>
+			</div>
+			<div class="item">
+
+				<div class="container">
+					<div class="carousel-caption">
+						<h2>Care is taken to ensure that the offerings are nutritious
+							and healthy.</h2>
+						<p>Description goes here</p>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="item">
+
+				<div class="container">
+					<div class="carousel-caption">
+						<h2>Premium quality Sona Masoori Rice is used in all rice
+							preparations.</h2>
+						<p>Description goes here</p>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="item">
+
+				<div class="container">
+					<div class="carousel-caption">
+						<h2>Pure "Nandini" brand ghee from KMF is used in preparation
+							of sweets, seasoning.</h2>
+						<p>Description goes here</p>
+
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="bottom">
-		<div class="qualityPoint1">
-			<div style="padding-top: 20px">
-				<span class="comma">&#8220;</span>Hygiene is paramount.<span class="comma">&#8221;</span>
+	<!-- /.carousel -->
+
+
+
+	<!-- Marketing messaging and featurettes
+    ================================================== -->
+	<!-- Wrap the rest of the page in another container to center all the content. -->
+
+	<div class="container marketing">
+
+		<!-- Three columns of text below the carousel -->
+		<div class="row"></div>
+	</div>
+	<!-- /.row -->
+	</div>
+	<!-- /.container -->
+
+
+
+
+
+
+
+	<!-- Marketing messaging and featurettes
+    ================================================== -->
+	<!-- Wrap the rest of the page in another container to center all the content. -->
+
+	<div class="container marketing">
+
+		<!-- Three columns of text below the carousel -->
+		<div class="row">
+			<div class="col-xs-3 col-sm-1"></div>
+			<!-- /.col-lg-4 -->
+			<div class="col-xs-8 col-sm-9">
+				<form:form action="/bijais-web/storeDetails"
+					commandName="customerInfo" class="navbar-form navbar-left"
+					method="POST">
+					<h1>Shree Nrusimha Prasada</h1>
+					<div class="form-group">
+						<form:input path="emailAddress" class="form-control"
+							placeholder="Please Enter Your email ID" />
+					</div>
+					<button type="submit" class="btn btn-custom">
+						<b>Keep me updated</b>
+					</button>
+					<c:if test="${not empty errorMessage}">
+						<p class="error">${errorMessage}</p>
+					</c:if>
+					<c:if test="${not empty successMessage}">
+						<p class="success">${successMessage}</p>
+					</c:if>
+				</form:form>
 			</div>
-		</div>
-		<div class="qualityPoint1">
-			<div style="padding-top: 20px">
-				<span class="comma">&#8220;</span>Utmost care goes into the
-				preparation of vegetables used in our cooking.<span class="comma">&#8221;</span>
-			</div>
-		</div>
-		<div class="qualityPoint2">
-			<div style="padding-top: 20px">
-				<span class="comma">&#8220;</span>Care is taken to ensure that the offerings are nutritious and healthy.<span class="comma">&#8221;</span>
-			</div>
-		</div>
-		<div class="qualityPoint2">
-			<div style="padding-top: 20px">
-				<span class="comma">&#8220;</span>Premium quality Sona Masoori Rice is used in all rice preparations.<span class="comma">&#8221;</span>
-			</div>
-		</div>
-		<div class="qualityPoint2">
-			<div style="padding-top: 20px">
-				<span class="comma">&#8220;</span>Pure "Nandini" brand ghee from KMF is used in preparation of sweets, seasoning.<span class="comma">&#8221;</span>
-			</div>
-		</div>
-		<div class="qualityPoint2">
-			<div style="padding-top: 20px">
-				<span class="comma">&#8220;</span>Care is taken to ensure that the offerings are nutritious and healthy.<span class="comma">&#8221;</span>
-			</div>
+			<!-- /.col-lg-4 -->
+			<div class="col-xs-3 col-sm-2"></div>
+			<!-- /.col-lg-4 -->
 		</div>
 	</div>
-	<div class="find-us">
-		<p>Phone Number: 9980890573</p>
-		<p>1424/5, 20th B Cross</p>
-		<p>9th Main road MCECHS Layout</p>
-		<p>B Block Sahakar Nagar</p>
-		<p>Bangalore 560092</p>
+	<!-- /.row -->
+
+	<div style="clear: both">&nbsp;</div>
+
+	<div class="container marketing">
+
+		<!-- Three columns of text below the carousel -->
+		<div class="row">
+			<div class="col-xs-3 col-sm-1"></div>
+			<!-- /.col-lg-4 -->
+			<div class="col-xs-8 col-sm-9">
+				<p>Phone Number: 9980890573</p>
+				<p>1424/5, 20th B Cross</p>
+				<p>9th Main road MCECHS Layout</p>
+				<p>B Block Sahakar Nagar</p>
+				<p>Bangalore 560092</p>
+			</div>
+			<!-- /.col-lg-4 -->
+			<div class="col-xs-3 col-sm-2"></div>
+			<!-- /.col-lg-4 -->
+		</div>
 	</div>
-	<script src="http://code.jquery.com/jquery-latest.min.js"
-		type="text/javascript"></script>
-	<script
-		src="resources/js/jquery.bxslider.min.js"></script>
-	<SCRIPT>
-		$(document).ready(function() {
-			$("#titlePoint").delay(1000).fadeIn();
-			$("#point1").delay(2000).fadeIn();
-			$("#point2").delay(3000).fadeIn();
-			$("#point3").delay(4000).fadeIn();
-			$("#point4").delay(5000).fadeIn();
-			$("#perfect").delay(7000).fadeIn();
-			$('.bottom').delay(9500).bxSlider({
-				auto : true,
-				autoControls : false
-			});
-		});
-	</SCRIPT>
+
+
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="/bijais-web/resources/js/bootstrap.min.js"></script>
+	<script src="/bijais-web/resources/js/holder.js"></script>
 </body>
 </html>
